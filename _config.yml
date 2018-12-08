@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 说IT
-subtitle: 关注技术和人文的原创IT博客
-keywords: 说IT，技术博客，原创IT博客
-description: 说IT是一个面向Apple和JavaScript生态的技术博客，内容聚焦于前后端开发、产品设计等方向。作者：唐先森(@tangkunyin)，网址：https://shuoit.net。
-author: 唐先森(https://www.tangkunyin.com)
+title: 灏絯喔
+subtitle: 一个人的小角落
+keywords: IT，技术博客，笔记
+description: 好记性不如烂笔头
+author: haohaio
 language:
 - zh-cn
 - en
@@ -16,7 +16,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://shuoit.net
+url: https://haohaio.github.io/
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:

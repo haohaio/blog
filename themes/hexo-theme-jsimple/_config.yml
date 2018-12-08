@@ -9,7 +9,7 @@ fullHttps: true
 # favicon
 favicon: /images/favicon.png
 # unique avatar
-avatarShow: false
+avatarShow: true
 avatarImage: /images/favicon.png
 
 # Home page sort type: -1: newer first，1: older first.
