@@ -1,3 +1,4 @@
+---
 title: Flux架构理解
 entitle: 'flux-study'
 author: 唐先森

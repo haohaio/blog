@@ -53,11 +53,13 @@ highlight:
 # Category & Tag
 default_category: 技术
 category_map:
-   技术: tech-notes
-   人文: humanities
-   其他: others
+  前端: front-end
+  技术: tech-notes
+  人文: humanities
+  其他: others
 tag_map:
   iOS: iOS
+  H5: H5
   hexo: hexo
   swift: swift
   golang: golang
