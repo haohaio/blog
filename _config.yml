@@ -59,7 +59,7 @@ category_map:
   其他: others
 tag_map:
   iOS: iOS
-  H5: H5
+  css: css
   hexo: hexo
   swift: swift
   golang: golang

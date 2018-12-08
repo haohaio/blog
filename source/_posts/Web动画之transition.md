@@ -6,9 +6,9 @@ avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
 authorAbout: 'https://haohaio.github.io'
 authorDesc: 写写代码，记记笔记
-categories: 技术
+categories: 前端
 date: 2018-12-08 22:46:22
-tags:
+tags: css
 keywords:
 description:
 photos:
