@@ -8,7 +8,7 @@ authorAbout: 'https://haohaio.github.io'
 authorDesc: 写写代码，记记笔记
 categories: 前端
 timestamp: 1544336906
-comments: false
+comments: true
 date: 2018-12-09 14:28:26
 tags: 
 - css
@@ -58,7 +58,7 @@ transition-duration: 500ms;
 
 - transition-timing-function (过渡的时序，即持续过程的速率)
   - linear (中间快，两头慢)
-  - ease (开始时慢，中间加速，末尾又降速)(default)
+  - ease (开始时慢，中间加速，末尾又降速)`default`
   - ease-in (开始时慢，之后快)
   - ease-out (开始时快，结束时候慢)
   - ease-in-out (两头慢)

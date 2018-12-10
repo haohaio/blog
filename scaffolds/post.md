@@ -13,5 +13,5 @@ tags:
 keywords: 
 description: 
 photos: 
-comments: false
+comments: true
 ---
