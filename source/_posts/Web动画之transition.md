@@ -42,8 +42,6 @@ photos:
 
 ## transition 的四个属性
 
-> 各属性需要一一对应
-
 - transition-property (指定需要变化的属性，可用关键字all表示所有属性)
 
 ```css
