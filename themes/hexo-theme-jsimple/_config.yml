@@ -45,11 +45,11 @@ coverTitle: 一个人的小角落
 coverDescription: 写写代码，记记笔记
 
 # sns url
-sns:
-  telegram: http://t.me/kunyintang
-  instagram: https://www.instagram.com/mtangsir/
-  twitter: https://twitter.com/tangkunyin
-  github: https://github.com/tangkunyin
+# sns:
+#   telegram: http://t.me/kunyintang
+#   instagram: https://www.instagram.com/mtangsir/
+#   twitter: https://twitter.com/tangkunyin
+#   github: https://github.com/haohaio
 
 # your article copyright or content declare
 postDeclare: 本文代表个人观点，内容仅供参考。

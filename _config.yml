@@ -104,6 +104,9 @@ deploy:
 - type: git
   repo: git@git.dev.tencent.com:nook/nook.coding.me.git
   branch: coding-pages
+- type: git
+  repo: git@gitee.com:haohaio/haohaio.git
+  branch: master
 
 # Backup settings see:https://github.com/coneycode/hexo-git-backup
 backup:

@@ -6,48 +6,48 @@ var SimpleCore = {
     current: null,
     prevTop: 0,
     headerShow: true,
-    snsQRCode: null,
+    wxQRCode: null,
     donateImg: null,
-    initParams: function (params) {
+    initParams: function(params) {
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.current = params.current;
-        SimpleCore.snsQRCode = params.snsQRCode;
+        SimpleCore.wxQRCode = params.wxQRCode;
         SimpleCore.donateImg = params.donateImg;
     },
     //外部调用初始化
-    init: function (params) {
+    init: function(params) {
         SimpleCore.initParams(params);
-        $(window).resize(function () {
+        $(window).resize(function() {
             SimpleCore.syncSize();
         });
-        $(window).scroll(function (e) {
+        $(window).scroll(function(e) {
             SimpleCore.scrollCallback();
         });
-        $(document).on('click', '.btn-read-mode', function (e) {
+        $(document).on('click', '.btn-read-mode', function(e) {
             e.preventDefault();
             SimpleCore.switchReadMode();
         });
-        $(document).on('click', '.btn-search', function (e) {
+        $(document).on('click', '.btn-search', function(e) {
             e.preventDefault();
             SimpleCore.switchSearch();
         });
-        $(document).on('click', '.btn-sns-qr', function (e) {
+        $(document).on('click', '.btn-sns-qr', function(e) {
             e.preventDefault();
-            if (SimpleCore.snsQRCode != '') {
-                SimpleCore.alert('来不及解释了赶紧上车','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
+            if (SimpleCore.wxQRCode != '') {
+                SimpleCore.alert('来不及解释了赶紧上车', '<img style="width:180px;background:#fff;" src="' + SimpleCore.wxQRCode + '">');
             } else {
-                SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
+                SimpleCore.alert('未开通自定义功能', '<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
         });
-        $(document).on('click', '.btn-thumbs-up', function (e) {
+        $(document).on('click', '.btn-thumbs-up', function(e) {
             e.preventDefault();
             if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('点个赞，你高兴就好','<img style="width:180px;background:#fff;" src="' + SimpleCore.donateImg + '">');
+                SimpleCore.alert('点个赞，你高兴就好', '<img style="width:180px;background:#fff;" src="' + SimpleCore.donateImg + '">');
             } else {
-                SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
+                SimpleCore.alert('未开通自定义功能', '<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
         });
-        $(document).on('click', '.btn-gotop', function (e) {
+        $(document).on('click', '.btn-gotop', function(e) {
             e.preventDefault();
             SimpleCore.goTop();
         });
@@ -56,10 +56,10 @@ var SimpleCore = {
         SimpleCore.setBuildingTime();
         SimpleCore.syncSize();
     },
-    goTop: function () {
-        $("html, body").animate({scrollTop: 0}, 200);
+    goTop: function() {
+        $("html, body").animate({ scrollTop: 0 }, 200);
     },
-    setPageCurrent: function () {
+    setPageCurrent: function() {
         if (SimpleCore.current === 'post') {
             $('#cover').hide();
             $('body').addClass('single');
@@ -67,7 +67,7 @@ var SimpleCore = {
             $('#cover').show();
             $('body').removeClass('single');
         }
-        $.each($('.nav-menu a'), function (k, v) {
+        $.each($('.nav-menu a'), function(k, v) {
             if (v.href == window.location.href) {
                 $(v).addClass('current');
             } else {
@@ -75,7 +75,7 @@ var SimpleCore = {
             }
         });
     },
-    scrollCallback: function () {
+    scrollCallback: function() {
         var top = document.body.scrollTop;
         if (top > 100) {
             $('.fixed-btn').show();
@@ -88,7 +88,7 @@ var SimpleCore = {
         }
         SimpleCore.prevTop = top;
     },
-    headerToggle: function () {
+    headerToggle: function() {
         if (SimpleCore.headerShow) {
             $('.page-title').css("top", 0);
             $('.nav-user').css("top", 0);
@@ -103,7 +103,7 @@ var SimpleCore = {
             }
         }
     },
-    syncSize: function () {	//同步窗口大小
+    syncSize: function() {	//同步窗口大小
         var pageTitle = $('.page-title');
         var size = $(window).width();
         if (size > 768 && SimpleCore.current != 'post') {
@@ -112,12 +112,12 @@ var SimpleCore = {
             pageTitle.removeAttr('style');
         }
         if (size < 768) {
-            $('.site-name').click(function (e) {
+            $('.site-name').click(function(e) {
                 e.preventDefault();
             });
         }
     },
-    switchSearch: function () {	//显示搜索
+    switchSearch: function() {	//显示搜索
         var srh = $('#search');
         if (srh.hasClass('active')) {
             srh.removeClass('active');
@@ -125,12 +125,12 @@ var SimpleCore = {
             srh.addClass('active');
         }
     },
-    switchReadMode: function () {
+    switchReadMode: function() {
         var next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
         SimpleCore.setLocalData('read-mode', next_mode);
         SimpleCore.changeReadModel();
     },
-    changeReadModel: function () {
+    changeReadModel: function() {
         var btn = $('.btn-read-mode');
         if (SimpleCore.getLocalData('read-mode') == 'night') {
             $('body').addClass('night-mode');
@@ -154,36 +154,36 @@ var SimpleCore = {
             });
         }
     },
-    alert: function (title,msg) {
+    alert: function(title, msg) {
         var id = 'notice-' + (new Date().getTime());
         var html = '<div id="' + id + '" class="notice-item">'
             + '<span class="notice-item-close"><i class="fa fa-close"></i></span>'
-            + '<p><h3 style="text-align: center;margin:0 0 10px 0">'+title+'</h3>' + msg + '</p></div>';
+            + '<p><h3 style="text-align: center;margin:0 0 10px 0">' + title + '</h3>' + msg + '</p></div>';
         var notice = $('#notice');
         if (notice.length == 0) {
             $('<div id="notice"></div>').appendTo($('body'));
         }
-        $(html).appendTo($('#notice')).on('click', '.notice-item-close', function () {
+        $(html).appendTo($('#notice')).on('click', '.notice-item-close', function() {
             $(this).parent().remove();
             return false;
         });
         //居中显示，于8秒后自动关闭
         $('#notice').css('margin-right', -$('#notice').width() / 2);
-        setTimeout(function () {
+        setTimeout(function() {
             $('#' + id).remove();
         }, 8000);
     },
-    setLocalData: function (key, value) {
+    setLocalData: function(key, value) {
         if (window.localStorage) {
             window.localStorage.setItem(key, value);
         }
     },
-    getLocalData: function (key) {
+    getLocalData: function(key) {
         if (window.localStorage) {
             return window.localStorage.getItem(key);
         }
     },
-    setBuildingTime: function () {
+    setBuildingTime: function() {
         var urodz = new Date(SimpleCore.buildingTime);  //建站时间
         var now = new Date();
         var ile = now.getTime() - urodz.getTime();
