@@ -1,12 +1,12 @@
 ---
 title: Web动画之transition
-entitle: 'web-animation-transition'
+entitle: 'css-transition'
 author: haohaio
 avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
 authorAbout: 'https://haohaio.github.io'
 authorDesc: 写写代码，记记笔记
-categories: 技术
+categories: 前端
 timestamp: 1544336906
 comments: false
 date: 2018-12-09 14:28:26
@@ -28,7 +28,9 @@ photos:
 
 一般来说，大部分简单的动画都可以使用 transition 实现。JavaScript动画则往往用于更加复杂，或是需要结合各类用户交互操作的动画效果。在运行效率方面，像jQuery这种JavaScript类库的动画效果要低于CSS3动画。而在兼容性方面，CSS3动画的兼容性要差于jQuery等类库动画，前者并不支持IE9之前的浏览器。今天就先了解一下 transition 动画。
 
-# Transition
+# Transition简介
+
+一种简单的动画，在一定时间内从一组CSS属性变成另一组属性。
 
 > IE只有10和以后的版本才支持transition
 
@@ -81,3 +83,10 @@ transition: background-color 1s,
 
 附上一个综合版的Demo [transition demo](https://codepen.io/haohaio/pen/madEJw)
 
+## 让动画更流畅
+
+以动画形式改变多个属性会增加Web浏览器的负担。一次有太多动画可能导致浏览器假死，甚至是崩溃。尤其是移动设备和平板电脑，因为这些设备的CPU比桌面电脑和笔记本电脑慢很多。
+
+不过，有4种变化导致浏览器使用太多CPU：opacity，以及transform属性的translate、scale和rotate函数。这四个属性处理起来比其它CSS属性省事，所以它们的动画效果更流畅。
+
+此外，还可以强制让电脑的GPU (Graphic Processing Unit, 图形处理器) 渲染动画。GPU的运算速度特别快，与电脑的CPU相比，执行特定类型的计算速度快得多。我们可以在样式中添加3D变形属性，以此”骗过“浏览器，让它使用GPU处理样式变化。但是因为GPU的处理能力有限，如果把太多视觉效果交给它处理，可能会拖慢浏览器，导致假死。
