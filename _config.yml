@@ -103,7 +103,7 @@ deploy:
   branch: master
 - type: git
   repo: git@git.dev.tencent.com:nook/nook.coding.me.git
-  branch: master
+  branch: coding-pages
 
 # Backup settings see:https://github.com/coneycode/hexo-git-backup
 backup:
