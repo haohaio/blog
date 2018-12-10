@@ -17,7 +17,7 @@ description: Web动画之transition简介
 photos:
 ---
 
-目前Web动画的两大实现途径：
+目前Web动画主要有两大实现途径：
 
 - CSS3动画。这类动画是当前页面动画的主力军，主要通过 transition 和 animation 两种方式来实现。
   - transition (过渡) 一种简单的动画，在一定时间内从一组CSS属性变成另一组属性。
