@@ -1,6 +1,6 @@
 ---
 title: Web动画之transition
-entitle: 'css-transition'
+entitle: 'web-animation-transition'
 author: haohaio
 avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
