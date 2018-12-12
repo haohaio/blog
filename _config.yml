@@ -20,7 +20,7 @@ url: https://haohaio.github.io/
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:
-  lang: en
+  lang: zh-cn
 
 # Directory
 source_dir: source
@@ -42,7 +42,7 @@ external_link: true # Open external links in new tab
 filename_case: 0s
 render_drafts: false
 post_asset_folder: false
-relative_link: false
+relative_link: true
 future: true
 highlight:
   enable: true
