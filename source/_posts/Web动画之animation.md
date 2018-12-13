@@ -11,6 +11,7 @@ timestamp: 1544578821
 comments: true
 date: 2018-12-12 09:40:21
 tags:
+- css
 keywords:
 description:
 photos:
@@ -84,4 +85,7 @@ CSS提供了几个 animation 相关的属性，用于控制如何以及何时播
 ### 暂停动画
 
 若有需要可使用伪类或js设置 animation-play-state (running|paused) 属性为 paused 来暂停动画。
-  
+
+# 推荐
+
+推荐一个CSS animation库 [animate.css](https://github.com/daneden/animate.css)，这个库封装了很多动画，拿来即用，非常方便。
