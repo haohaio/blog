@@ -1,17 +1,18 @@
+---
 title: 嘉宾推荐
-author: 唐先森
+author: haohaio
 avatar: /images/favicon.png
-authorLink: https://www.tangkunyin.com
-authorAbout: https://about.tangkunyin.com
-authorDesc: 一个写代码的「伪文人」
-date: 2017-02-07 13:22:22
+authorLink: 'https://haohaio.github.io'
+authorAbout: 'https://haohaio.github.io'
+authorDesc: 写写代码，记记笔记
+date: 2018-12-12 12:12:12
 keywords: 嘉宾推荐，友情链接
 description: 重量级嘉宾推荐，收录有趣、有意义、有影响力、有正能量的博客、资源。欢迎推荐、自荐。
 photos:
 comments: false
 ---
 
-#### 以下摘录有趣、有意义、有影响力、有正能量的博客、资源
+### 以下摘录有趣、有意义、有影响力、有正能量的博客、资源
 
 > 此处不做网址导航，因此不接受以`SEO`为目的的友链。排序不分那啥...
 
