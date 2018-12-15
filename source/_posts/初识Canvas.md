@@ -13,7 +13,7 @@ date: 2018-12-13 19:51:53
 tags:
 - css
 keywords:
-description:
+description: canvas 元素的基本介绍
 photos:
 - /img/2018/canvas.gif
 ---

@@ -13,7 +13,7 @@ date: 2018-12-15 20:03:21
 tags:
 - git
 keywords:
-description:
+description: Git 常用命令
 photos:
 - /img/2018/git.png
 ---
@@ -94,7 +94,7 @@ $ git reset HEAD^(HEAD~1)
 
 ```bash
 # 撤销相应的文件修改
-$ git checkout file(dir) : 
+$ git checkout file(dir)
 # 检出某一commit ID的修改
 $ git checkout d928a3
 ```

@@ -13,7 +13,7 @@ date: 2018-12-09 14:28:26
 tags: 
 - css
 keywords: html, css, animation
-description: Web动画之transition简介
+description: css transition
 photos:
 - /img/2018/css_animation.jpg
 ---

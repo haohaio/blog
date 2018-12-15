@@ -13,7 +13,7 @@ date: 2018-12-12 09:40:21
 tags:
 - css
 keywords:
-description:
+description: css animation
 photos:
 - /img/2018/css_animation.jpg
 ---
