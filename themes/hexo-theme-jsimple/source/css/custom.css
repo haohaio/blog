@@ -1,3 +1,12 @@
+/* markdown 表格占满一行 */
+
 table {
   display: table !important;
+}
+
+/* 列表展示图片，使图片展示完整 */
+
+.post-cover a {
+  background-size: contain;
+  background-color: #fff;
 }

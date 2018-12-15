@@ -51,28 +51,16 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: 技术
+default_category: 前端
 category_map:
   前端: front-end
-  技术: tech-notes
-  人文: humanities
+  后端: back-end
   其他: others
 tag_map:
-  iOS: iOS
   css: css
   hexo: hexo
-  swift: swift
-  golang: golang
-  sketch: sketch
-  zeplin: zeplin
-  网站: website
-  后端: serverSide
+  后端: spring boot
   JavaScript: javascript
-  TypeScript: typescript
-  ReactNative: RN
-  Mac必备工具: MacTools
-  跨平台: CrossPlatform
-  黑科技: CoolTech
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date

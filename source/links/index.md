@@ -21,22 +21,17 @@ comments: false
 [闲情写手](http://sentsin.com/)
 [腾讯AlloyTeam](http://www.alloyteam.com/)
 
-
 `苹果`派
 
 [王巍（喵神）的博客](https://onevcat.com/)
 [Objc.io](https://www.objc.io/)
-[Swifter](http://swifter.tips/)   
-
+[Swifter](http://swifter.tips/)
 
 `娱乐`圈
 
 [VIM](https://vim-adventures.com/)
 [CodeTank](http://codetank.alloyteam.com/)
 
-
 `公众`号
 
 没有链接，请直接关注微信公众号：`涔汐(zhangcenxi99)`、`小道消息`、`MacTalk`等等
-
-

@@ -19,7 +19,7 @@ homeArticleShown: 10
 
 
 # your site build time or domain buy time
-siteBuildingTime: 01/20/2018
+siteBuildingTime: 12/08/2018
 
 
 # Top navigate menu name
@@ -28,8 +28,7 @@ siteBuildingTime: 01/20/2018
 ## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
 menu:
   前端: front-end
-  技术: tech-notes
-  人文: humanities
+  后端: back-end
   其他: others
 
 # Left menu of single pages settings

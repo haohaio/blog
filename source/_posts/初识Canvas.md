@@ -15,6 +15,7 @@ tags:
 keywords:
 description:
 photos:
+- /img/2018/canvas.gif
 ---
 
 # 简介
