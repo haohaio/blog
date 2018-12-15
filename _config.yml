@@ -55,12 +55,14 @@ default_category: 前端
 category_map:
   前端: front-end
   后端: back-end
-  其他: others
+  其它: others
 tag_map:
-  css: css
+  iOS: iOS
+  CSS: css
   hexo: hexo
-  后端: spring boot
+  Spring Boot: spring-boot
   JavaScript: javascript
+  Git: git
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
