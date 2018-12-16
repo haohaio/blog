@@ -11,7 +11,7 @@ timestamp: 1544879554
 comments: true
 date: 2018-12-15 21:12:34
 tags:
-- Spring Boot
+- Spring
 keywords: 
 description: '@SpringBootApplication 简介'
 photos:
