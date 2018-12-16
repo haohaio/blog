@@ -1,5 +1,5 @@
 ---
-title: SpringBoot注解之@SpringBootApplication
+title: Spring Boot 注解之@SpringBootApplication
 entitle: ''
 author: haohaio
 avatar: /images/favicon.png
@@ -13,7 +13,7 @@ date: 2018-12-15 21:12:34
 tags:
 - Spring Boot
 keywords: 
-description: SpringBootApplication 简介
+description: '@SpringBootApplication 简介'
 photos:
 - /img/2018/spring.jpg
 ---
@@ -35,9 +35,17 @@ public class Application {
 
 ## @ComponentScan
 
-Spring 里有四大注解：@Service、@Repository、@Component 和 @Controller。可用来定义一个 bean。
+Spring 里有四大注解：@Component、@Controller、@Service 和 @Repository。可用来定义一个 bean。
 
 @ComponentScan 注解就是用来自动扫描被这些注解标识的类，最终生成 IoC 容器里的 bean。
+
+### @Component
+
+### @Controller
+
+### @Service
+
+### @Repository
 
 ## @SpringBootConfiguration
 
