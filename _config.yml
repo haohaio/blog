@@ -63,6 +63,7 @@ tag_map:
   Spring: spring
   JavaScript: javascript
   Git: git
+  微信小程序: mp-wechat
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
