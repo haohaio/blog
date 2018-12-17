@@ -11,7 +11,7 @@ timestamp: 1544875401
 comments: true
 date: 2018-12-15 20:03:21
 tags:
-- git
+- Git
 keywords:
 description: Git 常用命令
 photos:
