@@ -11,7 +11,7 @@ timestamp: 1544701913
 comments: true
 date: 2018-12-13 19:51:53
 tags:
-- css
+- CSS
 keywords:
 description: canvas 元素的基本介绍
 photos:
