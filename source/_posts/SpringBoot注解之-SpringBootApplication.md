@@ -58,10 +58,6 @@ Spring 里有四大注解：@Component、@Controller、@Service 和 @Repository�
 
 这个注解的作用与 `@Configuration` 作用相同，都是用来声明当前类是一个配置类。可以通过 `＠Bean` 注解生成 IoC 容器管理的 bean。
 
-## @EnableAutoConfiguration
-
-@EnableAutoConfiguration 是 Spring Boot 实现自动化配置的核心注解，通过这个注解把 Spring 应用所需的 bean 注入容器中。
-
 ### Java 配置
 
 Java 配置是通过 @Configuration 和 @Bean 来实现的
@@ -70,6 +66,10 @@ Java 配置是通过 @Configuration 和 @Bean 来实现的
 - @Bean：注解在方法上，声明当前方法返回的是一个 Bean
 
 > Java 配置和注解配置的主要原则是：全局配置使用 Java 配置 (如数据库的相关配置、MVC 相关配置)，业务 Bean 的配置使用注解配置 (@Service、@Component、@Repository、@Controller)
+
+## @EnableAutoConfiguration
+
+@EnableAutoConfiguration 是 Spring Boot 实现自动化配置的核心注解，通过这个注解把 Spring 应用所需的 bean 注入容器中。
 
 ## 总结
 
