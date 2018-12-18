@@ -10,3 +10,11 @@ table {
   background-size: contain;
   background-color: #fff;
 }
+
+.markdown-body code {
+  color: #305cb5;
+  font-size: 14px;
+  padding: 2px 6px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
