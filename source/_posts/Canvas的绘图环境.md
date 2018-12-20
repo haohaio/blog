@@ -35,8 +35,8 @@ Canvas 的 2d 绘图环境对象提供了功能强大的API，可以用来绘制
 | globalCompsiteOperation | 将某个物体绘制在其他的物体之上时采用的绘制方式                                       |
 | lineCap                 | 如何绘制线段的端点，可取的值：butt、round、square，默认值是 butt                     |
 | lineWidth               | 绘制线段的屏幕像素宽度。非负非无穷的 double 值，默认值是 1.0                         |
-| lineJoin                | 在两条线段相交时如何绘制焦点，可取的值：bevel, round, miter，默认值是 miter          |
-| miterLimit              | 如何绘制 miter 形式的线段焦点                                                        |
+| lineJoin                | 在两条线段相交时如何绘制交点，可取的值：bevel, round, miter，默认值是 miter          |
+| miterLimit              | 如何绘制 miter 形式的线段交点                                                        |
 | shadowBlur              | 延伸的阴影效果，该值为高斯模糊方程式中的参数值，非负、非无穷的 double 值，默认值为 0 |
 | shadowColor             | 阴影的颜色值                                                                         |
 | shadowOffsetX           | 阴影效果的水平方向偏移量                                                             |
