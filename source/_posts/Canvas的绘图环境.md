@@ -13,7 +13,7 @@ date: 2018-12-17 15:33:17
 tags:
 - CSS
 keywords:
-description:
+description: Canvas的绘图环境
 photos:
 - /img/2018/canvas.gif
 ---

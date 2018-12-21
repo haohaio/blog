@@ -13,7 +13,7 @@ date: 2018-12-17 17:46:54
 tags:
 - CSS
 keywords:
-description:
+description: Canvas的基本绘制操作
 photos:
 - /img/2018/canvas.gif
 ---
