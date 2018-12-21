@@ -1,6 +1,6 @@
 ---
 title: '[Java LeetCode]1. Two Sum'
-entitle: 'leetcode-twosum'
+entitle: 'leetcode-two-sum'
 author: haohaio
 avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
@@ -18,7 +18,7 @@ photos:
 - /img/2018/leetcode.png
 ---
 
-[原题链接](https://leetcode.com/problems/two-sum/#/description)
+[原题链接](https://leetcode.com/problems/two-sum/)
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -31,7 +31,6 @@ You may assume that each input would have exactly one solution, and you may not 
 ```java
 public int[] twoSum(int[] nums, int target) {
     int len = nums.length;
-
     for (int i = 0; i < len; i++) {
         for (int j = i + 1; j < len; j++) {
             if (nums[j] == target - nums[i]) {
@@ -39,7 +38,6 @@ public int[] twoSum(int[] nums, int target) {
             }
         }
     }
-
     throw new IllegalArgumentException("No two sum solution");
 }
 ```
@@ -54,7 +52,6 @@ public int[] twoSum(int[] nums, int target) {
 public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         HashMap<Integer, Integer> map = new HashMap<>();
-
         for (int i = 0; i < len; i++) {
             int complement = target - nums[i];
 
@@ -64,7 +61,6 @@ public int[] twoSum(int[] nums, int target) {
 
             map.put(nums[i], i);
         }
-
         throw new IllegalArgumentException("No two sum solution");
     }
 ```
