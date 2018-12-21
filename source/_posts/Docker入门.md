@@ -68,8 +68,7 @@ $ docker run -it learn/tutorials bash
 $ docker images
 
 # 删除镜像（需先删除使用镜像的容器，使用 -f 参数强制删除(不推荐)）
-$ docker rmi 镜像id
-$ docker rmi 镜像名
+$ docker rmi 镜像名/镜像id
 ```
 
 ### Docker container

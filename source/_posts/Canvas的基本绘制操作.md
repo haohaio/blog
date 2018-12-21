@@ -42,3 +42,25 @@ context.fillStyle = 'rgba(0, 0, 255, .5)';
 可看到左边矩形的边框遮盖了文本，这是因为边框用的是不透明色。
 
 strokeStyle 与 fillStyle 的属性值可以是任意有效的 CSS 颜色字符串。可以用 RGB、RGBA、HSL、HSLA 以及十六进制 RGB 标注法来指定，还可以通过 ‘red’、‘yellow’ 这样的颜色名称来指定。
+
+### 渐变色和图案
+
+#### 渐变色
+
+Canvas 元素支持线性 (linear) 渐变和放射 (radial) 渐变。
+
+##### 线性渐变
+
+我们可以通过 context 调用 createLinearGradient(double x1, double y1, double x2, double y2) 方法来创建线性渐变。需要向该方法传入两个点的 x、y 坐标，两点之间的连线就是 canvas 建立颜色渐变效果的依据。可通过该方法创建返回的 LinearGradient 实例调用 addColorStop(double stop, string color) 来向该渐变色添加颜色停止点。然后将该实例指定为 fillStyle 进行绘制。
+
+示例代码：[Linear Gradient](https://codepen.io/haohaio/pen/jXyawX)
+
+##### 放射渐变
+
+我们可以通过 context 调用 createRadialGradient(double x1, double y1, double d1,double x2, double y2, double d2) 方法来创建放射渐变需要指定两个圆形 (x、y 指定圆心，d 指定半径)，它们表示某个圆锥的起止部位。该方法会返回一个 RadialGradient 实例。
+
+示例代码：[Radial Gradient](https://codepen.io/haohaio/pen/OrpXRx)
+
+#### 图案
+
+除了颜色和渐变色，Canvas 元素也允许使用图案来对图形和文本进行描边和填充。这里的图案可以是 image元素、canvas元素 或 video元素。
