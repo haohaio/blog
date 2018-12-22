@@ -11,7 +11,7 @@ timestamp: 1545445186
 comments: true
 date: 2018-12-22 10:19:46
 tags:
-- Leetcode
+- LeetCode
 keywords:
 description: Palindrome Number
 photos:
