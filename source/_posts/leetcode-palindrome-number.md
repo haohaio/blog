@@ -1,5 +1,5 @@
 ---
-title: '[Java LeetCode]7. Palindrome Number'
+title: '[Java LeetCode]9. Palindrome Number'
 entitle: 'leetcode-palindrome-number'
 author: haohaio
 avatar: /images/favicon.png
