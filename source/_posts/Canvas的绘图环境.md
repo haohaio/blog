@@ -1,5 +1,5 @@
 ---
-title: Canvas学习笔记二：Canvas的绘图环境
+title: Canvas学习笔记二：绘图环境
 entitle: 'canvas-context'
 author: haohaio
 avatar: /images/favicon.png
