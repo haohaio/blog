@@ -1,6 +1,6 @@
 ---
-title: {{ title }}
-entitle: ''
+title: ''
+entitle: {{ title }}
 date: {{ date }}
 author: haohaio
 avatar: /images/favicon.png

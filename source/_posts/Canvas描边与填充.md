@@ -13,7 +13,7 @@ date: 2018-12-17 17:46:54
 tags:
 - CSS
 keywords:
-description: Canvas的基本绘制操作
+description: 通过描边与填充来绘制图形
 photos:
 - /img/2018/canvas.gif
 ---
