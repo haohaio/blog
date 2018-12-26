@@ -42,6 +42,8 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 
 Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 
+Example 1:
+
 ```code
 Input: "III"
 Output: 3
