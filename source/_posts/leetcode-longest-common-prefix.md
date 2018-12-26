@@ -1,5 +1,5 @@
 ---
-title: ''
+title: '[Java LeetCode]14. Longest Common Prefix'
 entitle: leetcode-longest-common-prefix
 author: haohaio
 avatar: /images/favicon.png
