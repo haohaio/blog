@@ -6,7 +6,7 @@ avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
 authorAbout: 'https://haohaio.github.io'
 authorDesc: 写写代码，记记笔记
-categories: 前端
+categories: 其它
 timestamp: 1545834750
 comments: true
 date: 2018-12-26 22:32:30
