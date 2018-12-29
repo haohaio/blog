@@ -20,9 +20,17 @@ photos:
 
 Canvas 的绘制操作主要分为两种：描边与填充。
 
+### 坐标系统
+
+在进行绘制之前，我们还要先需要了解一下 Canvas 的坐标系统。只有先通过坐标确定了位置，Canvas 绘图环境才知道在哪里进行绘制。
+
+在默认情况下，坐标系统是以 canvas 的左上角为原点，X 坐标向右方增长，Y 坐标向下方延伸。
+
+但Canvas 的坐标系统并不是固定的，我们还可以对坐标系统进行平移、旋转、缩放等操作。这里先不做详细介绍
+
 ### 文本的绘制
 
-anvas 的绘图环境提供了下面两个 API 来直接绘制文本：
+Canvas 的绘图环境提供了下面两个 API 来直接绘制文本：
 
 - strokeText(string text, double x, double y)
 - fillText(string text, double x, double y)
