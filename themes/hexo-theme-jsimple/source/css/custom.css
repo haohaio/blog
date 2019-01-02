@@ -18,3 +18,33 @@ table {
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
 }
+
+.tag-list {
+  padding-left: 0;
+}
+
+.tag-list li {
+  width: auto;
+}
+
+.tag-list li  + li {
+  margin-left: 20px;
+}
+
+.tag-item {
+  display: inline-block;
+  color: #409eff;
+  background-color: #ebf5ff;
+  border-color: #87e8de;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid #d8ebff;
+  font-size: 12px;
+}
+
+.tag-item:hover {
+  background-color: #409eff;
+  color: #fff;
+}
