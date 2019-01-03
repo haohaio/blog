@@ -6,7 +6,7 @@ avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
 authorAbout: 'https://haohaio.github.io'
 authorDesc: 写写代码，记记笔记
-categories: 其它
+categories: LeetCode
 timestamp: 1546048971
 comments: true
 date: 2018-12-29 10:02:51

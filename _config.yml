@@ -55,6 +55,7 @@ default_category: 前端
 category_map:
   前端: front-end
   后端: back-end
+  LeetCode: leetcode
   其它: others
 tag_map:
   iOS: iOS
