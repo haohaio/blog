@@ -29,6 +29,7 @@ siteBuildingTime: 12/08/2018
 menu:
   前端: front-end
   后端: back-end
+  LeetCode: leetcode
   其它: others
 
 # Left menu of single pages settings
