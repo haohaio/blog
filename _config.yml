@@ -67,6 +67,7 @@ tag_map:
   微信小程序: mp-wechat
   Docker: docker
   LeetCode: leetcode
+  HTML5: html5
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
