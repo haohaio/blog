@@ -23,7 +23,7 @@ photos:
 在介绍方案之前，我们要首先要对 viewport 的 meta 标签有一个大概的了解，其主要用来告诉浏览器如何规范的渲染 Web 页面。我们经常可以在页面中看到这样的代码：
 
 ```html
-<!-- 将视觉视口的宽度设置为设备宽度。网页不缩放，不允许用户缩放。页面占满整个屏幕 (适配“刘海”屏)。-->
+<!-- 将视窗的宽度设置为设备宽度。网页不缩放，不允许用户缩放。页面占满整个屏幕 (适配“刘海”屏)。-->
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
 ```
 
@@ -34,7 +34,7 @@ photos:
 假如我们设计稿的宽度是 `750px`, 那么我们可以将 viewport 的 meta 标签设置为这个样子：
 
 ```html
-<!-- 将视觉视口的宽度设置为 750px -->
+<!-- 将视窗的宽度设置为 750px -->
 <meta name="viewport" content="width=750">
 ```
 
@@ -49,7 +49,7 @@ photos:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=750">
-  <title>固定视觉视口宽度，浏览器自动缩放</title>
+  <title>固定视窗宽度，浏览器自动缩放</title>
   <style>
     * {
       margin: 0;
@@ -88,13 +88,13 @@ photos:
 </html>
 ```
 
-这种做法，就是将视觉视口设置成固定的宽度，让浏览器自动缩放进行适配。但这种做法有一个很明显的弊端，就是不支持媒体查询，当我们需要跟聚设备宽度做一些样式的定制时，这种方案就做不到了。其原因就是我们将视觉视口设置成了固定的宽度，媒体查询时获得的宽度始终都是 `750px` 了。。。
+这种做法，就是将视窗设置成固定的宽度，让浏览器自动缩放进行适配。但这种做法有一个很明显的弊端，就是不支持媒体查询，当我们需要跟聚设备宽度做一些样式的定制时，这种方案就做不到了。其原因就是我们将视窗设置成了固定的宽度，媒体查询时获得的宽度始终都是 `750px` 了。。。
 
 简单来说，当我们的页面没有那么精致的时候，这种方案就可以满足我们的要求了~~
 
 ### 方案二：动态设置缩放比例
 
-此外，我们还可以将视觉视口的宽度设为 `device-width`，动态设置缩放比例来进行适配。但这种方案其实与方案一是一样的，还是不支持媒体查询。因为缩放也会影响视觉视口的尺寸。这种方案相对于方案一来说，兼容性可能会更好一点，但具体兼容性没有进行测试，不太清楚~~
+此外，我们还可以将视窗的宽度设为 `device-width`，动态设置缩放比例来进行适配。但这种方案其实与方案一是一样的，还是不支持媒体查询。因为缩放也会影响视窗的尺寸。这种方案相对于方案一来说，兼容性可能会更好一点，但具体兼容性没有进行测试，不太清楚~~
 
 动态设置缩放比例的代码如下：
 
@@ -104,7 +104,7 @@ var resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize'
 var recalc = function() {
   var metaEl = document.querySelector('meta[name="viewport"]');
   var designWidth = 750; // 设计稿的宽度
-  var scale = document.documentElement.clientWidth / designWidth; // 视觉视口宽度与设计稿宽度的比例
+  var scale = document.documentElement.clientWidth / designWidth; // 视窗宽度与设计稿宽度的比例
 
   if (!metaEl) {
     metaEl = document.createElement('meta');
@@ -128,7 +128,7 @@ if (document.addEventListener) {
 
 ### 方案三：使用 rem 进行布局
 
-有时为了让页面更加精致，我们还是不能将视觉视口设置成固定的宽度。一般情况下，我们通过设置告诉浏览器使用它的理想视口，即将视觉视口的宽度设为设备的宽度，并不进行缩放：
+有时为了让页面更加精致，我们还是不能将视窗设置成固定的宽度。一般情况下，我们通过设置告诉浏览器使用它的理想视口，即将视窗的宽度设为设备的宽度，并不进行缩放：
 
 > 苹果引入了理想视口的概念，它是对设备来说最理想的布局视口尺寸。理想视口中的网页用户最理想的宽度，用户进入页面的时候不需要缩放。
 
@@ -162,7 +162,7 @@ var baseFontSize = 100; // 写代码时所基于的根元素的 fontsize 大小�
 var resizeEvt = 'onorientationchange' in window ? 'orientationchange' : 'resize';
 // 重新计算根元素的 fontsize
 var recalc = function () {
-  var clientWidth = docEl.clientWidth; // 视觉视口宽度，即 viewport 的 meta 标签中 width 所设置的值 (device-width) * 缩放比例
+  var clientWidth = docEl.clientWidth; // 视窗宽度，即 viewport 的 meta 标签中 width 所设置的值 (device-width) * 缩放比例
 
   if (clientWidth) {
     docEl.style.fontSize = baseFontSize * (clientWidth / designWidth) + 'px';
