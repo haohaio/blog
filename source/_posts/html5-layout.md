@@ -187,3 +187,24 @@ $base-font-size: 100;
   @return $px / $base-font-size * 1rem
 }
 ```
+
+### 方案四：使用 vw 进行布局
+
+`vw` 是基于Viewport视窗的长度单位，这里的视窗（Viewport）指的就是浏览器可视化的区域，而这个可视区域是 `window.innerWidth/window.innerHeight` 的大小。
+
+- vw：是 Viewport's width 的简写，1vw 等于 window.innerWidth的1%
+- vh：和 vw 类似，是Viewport's height的简写，1vh 等于window.innerHeihgt的1%
+- vmin：vmin的值是当前 vw 和 vh 中较小的值
+- vmax：vmax的值是当前 vw 和 vh 中较大的值
+
+> 假如我们设计稿的宽度是 `750px`, 那么 1vw 就是 7.5vw
+
+我们依然是将 viewport 的 mate 标签设置为这个样子：
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+我们直接将设计稿的中 px 换算成 vw 来设置样式后，就可以完成适配了，而不需要再像方案三中动态的修改 html 元素的 fontSize 了~~
+
+这种方案与方案三的方案思想是一致的，都是进行等比例缩放。相对于方案三来说，这种方案兼容性较差一些，但网上也有一些方法来处理这些问题，这里就不详细介绍了。。。
