@@ -197,7 +197,7 @@ $base-font-size: 100;
 - vmin：vmin的值是当前 vw 和 vh 中较小的值
 - vmax：vmax的值是当前 vw 和 vh 中较大的值
 
-> 假如我们设计稿的宽度是 `750px`, 那么 1vw 就是 7.5vw
+> 假如我们设计稿的宽度是 `750px`, 那么 1vw 就是 7.5px
 
 我们依然是将 viewport 的 mate 标签设置为这个样子：
 
