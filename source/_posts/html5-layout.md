@@ -183,7 +183,7 @@ if (document.addEventListener) {
 $base-font-size: 100;
 
 // 计算 px 转 rem
-@function px2rem($pxWidth) {
-  @return $pxWidth / $base-font-size * 1rem
+@function px2rem($px) {
+  @return $px / $base-font-size * 1rem
 }
 ```
