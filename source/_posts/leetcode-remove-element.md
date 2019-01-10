@@ -13,7 +13,7 @@ date: 2019-01-03 23:23:03
 tags:
 - LeetCode
 keywords:
-description:
+description: Remove Element
 photos:
 - /img/2018/leetcode.png
 ---

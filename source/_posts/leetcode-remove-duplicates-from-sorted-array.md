@@ -13,7 +13,7 @@ date: 2018-12-29 10:02:51
 tags:
 - LeetCode
 keywords:
-description:
+description: Remove Duplicates from Sorted Array
 photos:
 - /img/2018/leetcode.png
 ---
