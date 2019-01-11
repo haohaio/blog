@@ -54,21 +54,22 @@ Output: 0
 
 ### 解法
 
+类似二分查找法
+
 ```java
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int startIndex = 0;
         int endIndex = nums.length - 1;
-        int middleIndex = (startIndex + endIndex)  / 2;
 
         while (startIndex <= endIndex) {
-            if (target <= nums[middleIndex]) {
-                endIndex = middleIndex - 1;
-            } else {
-                startIndex = middleIndex + 1;
-            }
+            int midIndex = (startIndex + endIndex)  / 2;
 
-            middleIndex = (startIndex + endIndex)  / 2;
+            if (target <= nums[midIndex]) {
+                endIndex = midIndex - 1;
+            } else {
+                startIndex = midIndex + 1;
+            }
         }
 
         return startIndex;
