@@ -37,7 +37,7 @@ $ git init
 # 克隆远程仓库
 $ git clone url (gcl)
 # 查看所有远程仓库信息
-$ git remote -v
+$ git remote -v (grv)
 # 添加远程仓库
 $ git remote add name url
 # 删除远程仓库
@@ -60,14 +60,14 @@ $  git add dir/file
 # stages new and modified, without deleted
 $ git add .
 # stages all
-$ git add -A
+$ git add -A (gaa)
 ```
 
 - git commit
 
 ```bash
 # 提交所有Index修改到HEAD，并附上 commit message
-$ git commit -m
+$ git commit -m (gcmsg)
 # 提交所有修改到HEAD(包含Working Dir和Index，但不包含new files)，并附上 commit message
 $ git commit -a -m (gcam)
 # 修订HEAD的修改
@@ -113,11 +113,11 @@ $ git clean -nfd
 - git diff
 
 ```bash
-# 查看Working Dir与Index的区别
-$ git diff
-# 查看Index与HEAD的区别
-$ git diff –-cached
-# 查看Working Dir与HEAD的区别
+# 查看 Working Dir 与 Index 的区别
+$ git diff (gd)
+# 查看 Index 与 HEAD 的区别
+$ git diff –-cached (gdca)
+# 查看 Working Dir与 HEAD 的区别
 $ git diff HEAD
 ```
 
@@ -215,9 +215,9 @@ $ git push origin :new_branch
 - git merge & git rebase & git cherry-pick
 
 ```bash
-# 合并master到当前分支
+# 合并 master 到当前分支
 $ git merge master
-# 变基当前分支到master
+# 变基当前分支到 master
 $ git rebase master
 # 合并某个commit到当前分支
 $ git cherry-pick commit-id
