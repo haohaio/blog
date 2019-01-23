@@ -57,7 +57,6 @@ Java 配置是通过 `@Configuration` 和 `@Bean` 来实现的
 
 被 `@ComponentScan` 标注的类，会被 spring 容器进行管理。
 
-> 四个注解是等效的，可根据需要选用
-Spring 里有四大注解：`@Component`、`@Controller`、`@Service` 和 `@Repository`。
+Spring 里有四大注解：`@Component`、`@Controller`、`@Service` 和 `@Repository`。四个注解是等效的，可根据需要选用。
 
 `@ComponentScan` 注解就是用来自动扫描被这些注解标识的类，最终生成 IoC 容器里的 Bean。
