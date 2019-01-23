@@ -18,7 +18,7 @@ photos:
 - /img/2018/spring.jpg
 ---
 
-我们经常可以在 Spring Boot 的启动类代码中见到如下代码：
+我们经常可以在 Spring Boot 的引导类中见到如下代码：
 
 ```java
 @SpringBootApplication
@@ -31,7 +31,7 @@ public class Application {
 }
 ```
 
-下面我们就来了解一下 @SpringBootApplication 这个注解。我们进入该注解的源码后就会发现，其内部主要是由 @ComponentScan、 @SpringBootConfiguration、 @EnableAutoConfiguration 这三个注解组合。接下来我们就来了解一下这三个注解
+下面我们就来了解一下 `@SpringBootApplication` 这个注解。我们进入该注解的源码后就会发现，其内部主要是由 `@ComponentScan`、 `@SpringBootConfiguration`、 `@EnableAutoConfiguration` 这三个注解组合。接下来我们就来了解一下这三个注解
 
 ## @SpringBootConfiguration
 
