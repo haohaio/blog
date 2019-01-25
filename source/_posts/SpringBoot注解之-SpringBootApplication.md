@@ -1,6 +1,6 @@
 ---
 title: Spring Boot 注解之@SpringBootApplication
-entitle: ''
+entitle: 'spring-boot-logging'
 author: haohaio
 avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
@@ -31,7 +31,7 @@ public class Application {
 }
 ```
 
-下面我们就来了解一下 `@SpringBootApplication` 这个注解。我们进入该注解的源码后就会发现，其内部主要是由 `@ComponentScan`、 `@SpringBootConfiguration`、 `@EnableAutoConfiguration` 这三个注解组合。接下来我们就来了解一下这三个注解
+下面我们就来了解一下 `@SpringBootApplication` 这个注解。我们进入该注解的源码后就会发现，其内部主要是由 `@ComponentScan`、 `@SpringBootConfiguration`、 `@EnableAutoConfiguration` 这三个注解组成。接下来我们就来了解一下这三个注解
 
 ## @SpringBootConfiguration
 
