@@ -144,6 +144,6 @@ hexo g && hexo d
 
 刷新页面后就可以看到我们已经成功的更换主题了，具体还可以根据 [详细介绍](http://theme-next.iissnan.com/getting-started.html) 来让我们的博客更加美观、强大。
 
-### 结语
+## 结语
 
 坚持！坚持！坚持！一定要把写博客的习惯坚持下去~~
