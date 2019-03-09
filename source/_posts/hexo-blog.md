@@ -26,7 +26,7 @@ photos:
 
 今天就来介绍一下如何使用 Hexo 来搭建自己的个人博客。
 
-## 什么是 Hexo？
+## Hexo
 
 [Hexo](https://hexo.io/zh-cn/) 是一个基于 Node.js, 支持 Markdown 的快速、简洁且高效的博客框架。
 
