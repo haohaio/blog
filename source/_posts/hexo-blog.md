@@ -86,7 +86,7 @@ $ hexo n 我的第一篇博客
 
 我们可以将我们的个人博客部署在服务器上，并代理到我们自己的域名，但这些都是需要 ￥￥ 的。所以推荐一些免费的服务来用来部署我们的博客，比如 [GitHub](https://github.com/)、[Coding](https://coding.net/) 和 [码云](https://gitee.com/) 等，这些平台提供了免费的 Pages 服务，可以用来部署我们的博客。下面以 Github Pages 为例，讲一下如何进行部署，其它平台的操作也是大同小异。
 
-#### Github Pages
+#### GitHub Pages
 
 > GitHub 提供了 GitHub Pages 的服务，免费提供 `username.github.io` 的域名，来让我们部署一个静态网页。
 
@@ -115,7 +115,7 @@ deploy:
 $ npm install hexo-deployer-git --save && hexo g && hexo d
 ```
 
-> 最好配置一下 Github 的 SSH key，将 repo 改成 SSH 类型的，这样部署的时候就不需要输入用户名和密码啦~~
+> 最好配置一下 GitHub 的 SSH key，将 repo 改成 SSH 类型的，这样部署的时候就不需要输入用户名和密码啦~~
 
 然后访问一下 `username.github.io` 就能看到自己搭建的博客啦~~
 
