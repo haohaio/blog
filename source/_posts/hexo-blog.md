@@ -62,6 +62,8 @@ $ hexo init blog && cd blog && npm install
 
 ### 启动服务
 
+执行命令
+
 ```bash
 # 会在本地启动一个 http server，用来访问我们的个人博客
 $ hexo server (hexo s)
@@ -70,6 +72,8 @@ $ hexo server (hexo s)
 启动服务后即可在 [本地](localhost:4000) 访问自己刚刚搭建的博客。
 
 ### 写作
+
+执行命令
 
 ```bash
 # hexo new [layout] <title> 创建一篇新文章，layout 默认为 post（scaffolds/post）
@@ -89,9 +93,9 @@ $ hexo n 我的第一篇博客
 - 首先我们要创建一个 GitHub 帐号，用户名一定要想好了再创建，因为用户名会关系到我们个人博客的域名哦~~
 - 然后创建一个名称为 `username.github.io` 的项目，然后点击项目的配置，就会发现，我们的Pages服务已经OK了,如下图所示
 
-![project.png](https://upload-images.jianshu.io/upload_images/1692994-c6a7449764b9930a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![project.png](https://upload-images.jianshu.io/upload_images/1692994-aa18483b1638de5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![pages.png](https://upload-images.jianshu.io/upload_images/1692994-becfe3d0fb14ade8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![pages.png](https://upload-images.jianshu.io/upload_images/1692994-77ac0154b8739377.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 接下来只需要部署我们的代码就可以了
 
@@ -100,7 +104,7 @@ $ hexo n 我的第一篇博客
 ```yml
 deploy:
 - type: git
-  repo: https://github.com/yuanfang008/yuanfang008.github.io.git
+  repo: https://github.com/haohaio/haohaio.github.io.git
   branch: master
 ```
 
@@ -121,7 +125,7 @@ $ npm install hexo-deployer-git --save && hexo g && hexo d
 
 那我们就以 GitHub 上 Star 最多的 [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 为例来更换我们的主题。
 
-1. 执行命令
+执行命令
 
 ```bash
 # 创建主题文件夹
@@ -130,16 +134,17 @@ $ mkdir themes/next
 $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ```
 
-2. 配置 `_config.yml`
+配置 `_config.yml`
 
 ```yml
 theme: next
 ```
 
-3. 执行命令，重新部署
+执行命令
 
 ```bash
-hexo g && hexo d
+# 重新部署
+$ hexo g && hexo d
 ```
 
 刷新页面后就可以看到我们已经成功的更换主题了，具体还可以根据 [详细介绍](http://theme-next.iissnan.com/getting-started.html) 来让我们的博客更加美观、强大。
