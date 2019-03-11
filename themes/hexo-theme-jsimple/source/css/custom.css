@@ -20,7 +20,7 @@ table {
 }
 
 .tag-list {
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
 .tag-list li {
