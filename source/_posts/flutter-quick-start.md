@@ -22,7 +22,7 @@ photos:
 
 Flutter allows you to build beautiful native apps on iOS and Android from a single codebase.
 
-Flutter 是 Google 推出并开源的移动应用开发框架，采用Dart语言进行开发，使用自绘引擎渲染视图，主打跨平台、高保真、高性能。
+Flutter 是 Google 推出并开源的移动应用开发框架，采用 Dart 语言进行开发，使用自绘引擎渲染视图，主打跨平台、高保真、高性能。
 
 ## 开发环境
 
