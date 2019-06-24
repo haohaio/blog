@@ -203,14 +203,24 @@ Wrap 可以用来处理自动换行的布局。Flow 可以很轻易的实现 Wra
 
 ListBody 的作用是按给定的轴方向，按照顺序排列子节点。不常直接使用，一般都会配合 ListView 或者 Column 等控件使用
 
+### CustomMultiChildLayout
+
+> A widget that uses a delegate to size and position multiple children.
+
+CustomMultiChildLayout 的作用是通过 delegate 实现 多节点的自定义布局（尺寸、位置）。
+
+### LayoutBuilder
+
+> Builds a widget tree that can depend on the parent widget's size.
+
 ### ListView
 
 > A scrollable, linear list of widgets.
 
 ListView 可以用来做列表展示。
 
-### CustomMultiChildLayout
+### Expanded
 
-> A widget that uses a delegate to size and position multiple children.
+> A widget that expands a child of a Row, Column, or Flex.
 
-CustomMultiChildLayout 的作用是通过 delegate 实现 多节点的自定义布局（尺寸、位置）。
+配合 Row & Column 使用，设置 child 的 flex 值。
