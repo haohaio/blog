@@ -17,11 +17,13 @@ photos:
 - /img/2019/design.png
 ---
 
-> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。
-
 Singleton 可以说是设计模式中最简单的一个模式了，但是我们要想用好它的话，也不简单~~
 
-## Java 的单例
+我们先来看一下单例模式的概念：
+
+> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+
+## Java 中的单例
 
 下面我们先来看在 Java 中如何实现单例模式：
 
@@ -182,7 +184,7 @@ class Singleton {
 
 看起来非常简单，并且天生是线程安全的。如果不考虑 Lazy Loading 带来的这些微小的内存消耗和优化的话，看起来这是一个很不错的选择。
 
-## iOS 的单例
+## iOS 中的单例
 
 再让我们看一下 iOS 中是怎么实现单例模式的：
 
@@ -201,7 +203,7 @@ class Singleton {
 
 可以看到，与 Java 中的懒汉式版本是基本一样的，线程安全是使用 GCD 里的 dispatch_once (保证在多个线程同时调用的时候，dispatch_once 只会执行一次) 来保证的。
 
-## JavaScript 的单例
+## JavaScript 中的单例
 
 ### 模拟传统面向对象语言实现的单例
 
@@ -261,11 +263,9 @@ var user = (function(){
 })()
 ```
 
-### 结合全局变量的惰性单例（使用时再创建）
+### 实际情况中的单例
 
-一般情况下，我们在写弹窗的时候，都要写一个遮罩层。很明显我们可以把这个遮罩层设计成在页面里是唯一的。
-
-可以设计成这个样子：
+举个栗子，我们在写弹窗的时候，一般都要写一个遮罩层，很明显我们可以把这个遮罩层设计成在页面里是唯一的。我们可以设计成这个样子：
 
 ```javascript
 var createMask = function() {
@@ -273,7 +273,6 @@ var createMask = function() {
   return function() {
     if(!mask) {
       mask = document.createElement('div');
-      mask.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
       mask.style.display = 'none';
       document.body.appendChild(mask);
     }
@@ -294,7 +293,6 @@ var getSingleton = function(fn) {
 
 var createMask = function(){
   var mask = document.createElement('div');
-  mask.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
   mask.style.display = 'none';
   document.body.appendChild(mask);
   return mask;
