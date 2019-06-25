@@ -163,7 +163,7 @@ public class Singleton {
 
 这样终于是和同步方法版本一样可靠了~~
 
-## 饿汉式 (当 class 文件被加载的时候，初始化)
+## 饿汉式 (当 class 文件被加载的时候，初始化单例)
 
 ```java
 class Singleton {
@@ -199,20 +199,25 @@ class Singleton {
 }
 ```
 
-可以看到，是使用 GCD 里的 dispatch_once (保证在多个线程同时调用的时候，dispatch_once 只会执行一次) 来保证线程安全的。
+可以看到，与 Java 中的懒汉式版本是基本一样的，线程安全是使用 GCD 里的 dispatch_once (保证在多个线程同时调用的时候，dispatch_once 只会执行一次) 来保证的。
 
 ## JavaScript 的单例
 
 ### 模拟传统面向对象语言实现的单例
 
 ```javascript
-var Singleton  = function() {
+var Singleton  = function(name) {
+  this.name = name;
   this.instance = null;
 }
 
-Singleton.getInstance = function() {
+Singleton.prototype.getName = function() {
+  return this.name;
+}
+
+Singleton.getInstance = function(name) {
   if(!this.instance) {
-    this.instance = new Singleton();
+    this.instance = new Singleton(name);
   }
   return this.instance;
 }
@@ -220,9 +225,9 @@ Singleton.getInstance = function() {
 
 ### 全局变量
 
-全局变量不是单例模式，但是一个全局变量确实是独一无二的。但是全局变量存在很多问题，它很容易造成命名空间污染。
+全局变量不是单例模式，但是一个全局变量确实是独一无二的。
 
-我们有必要尽量的减少全局变量的使用，即使需要，也要把它的污染将至最低。
+然而全局变量存在很多问题，它很容易造成命名空间污染。我们有必要尽量的减少全局变量的使用，即使需要，也要把它的污染将至最低。
 
 #### 使用命名空间
 
@@ -255,3 +260,57 @@ var user = (function(){
   }
 })()
 ```
+
+### 结合全局变量的惰性单例（使用时再创建）
+
+一般情况下，我们在写弹窗的时候，都要写一个遮罩层。很明显我们可以把这个遮罩层设计成在页面里是唯一的。
+
+可以设计成这个样子：
+
+```javascript
+var createMask = function() {
+  var mask;
+  return function() {
+    if(!mask) {
+      mask = document.createElement('div');
+      mask.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+      mask.style.display = 'none';
+      document.body.appendChild(mask);
+    }
+    return mask;
+  }
+}()
+```
+
+但是上面代码还是有一些问题的，很明显它是违背了单一职责原则的，创建对象和管理单例的逻辑都放在 createMask 对象内部了。下面我们优化一下：
+
+```javascript
+var getSingleton = function(fn) {
+  var result;
+  return function() {
+    return result || (result = fn.apply(this, arguments));
+  }
+}
+
+var createMask = function(){
+  var mask = document.createElement('div');
+  mask.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'
+  mask.style.display = 'none';
+  document.body.appendChild(mask);
+  return mask;
+}
+
+var createSingleMask = getSingleton(createMask);
+```
+
+这样看起来还不错，`getSingleton` 方法还可以用来通用的创建其它单例哟~~
+
+## 小结
+
+单例模式看起来非常简单，但是用起来的时候还是有很多要注意的地方。因为 JavaScript 与传统面向对象语言之间的差异性，还会有其它更适合在方法在 JavaScript 中创建单例。
+
+## 参考
+
+[设计模式 之 Singleton(Java实现)](https://yl33643.coding.me/2016/08/30/2016-08-30-design-pattern-singleton-java/)
+[Java 单例真的写对了么?](https://www.race604.com/java-double-checked-singleton/)
+[JS 单例模式](https://www.cnblogs.com/mguo/p/3144373.html)

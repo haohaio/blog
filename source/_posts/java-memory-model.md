@@ -68,6 +68,6 @@ x = b; // A2    y = a; // B2
 
 > 基于 volatile 变量规则，可以在 Java 中可以使用 volatile 关键字来修饰多线程间共享变量，使该变量在多线程之间可见。
 
-### 参考
+## 参考
 
 [深入理解 Java 内存模型（一）——基础](https://www.infoq.cn/article/java-memory-model-1/)
