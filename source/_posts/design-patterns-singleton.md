@@ -120,7 +120,7 @@ class Singleton {
             }
         }
 
-        return singleton;
+        return instance;
     }
 
 }
@@ -268,7 +268,7 @@ var user = (function(){
 举个栗子，我们在写弹窗的时候，一般都要写一个遮罩层，很明显我们可以把这个遮罩层设计成在页面里是唯一的。我们可以设计成这个样子：
 
 ```javascript
-var createMask = function() {
+var createMask = (function() {
   var mask;
   return function() {
     if(!mask) {
@@ -278,7 +278,7 @@ var createMask = function() {
     }
     return mask;
   }
-}()
+})()
 ```
 
 但是上面代码还是有一些问题的，很明显它是违背了单一职责原则的，创建对象和管理单例的逻辑都放在 createMask 对象内部了。下面我们优化一下：
