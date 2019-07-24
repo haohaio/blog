@@ -1,14 +1,15 @@
 <div class="page-title">
     <ul>
         <li><a href="/" data-name="<%= __('home') %>" title="Back Home"><%= __('home') %></a></li>
-        <li><a href="/tags" data-name="<%= __('tagcloud')  %>" title="<%= __('tagcloud')  %>"><%= __('tags')  %></a></li>
+        <li><a href="/tags" data-name="<%= __('tagcloud')  %>" title="<%= __('tagcloud')  %>"><%= __('tags')  %></a>
+        </li>
         <%- partial('_widget/search-bar', null, {cache: !config.relative_link}) %>
     </ul>
 </div>
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">坦率的讲 - 本站目前共计<%= site.posts.length %>篇文章</h3>
+            <h3 class="post-title">本站目前共计<%= site.posts.length %>篇文章</h3>
         </div>
         <p>不信，你数数 ：） </p>
         <div class="post-content markdown-body" itemprop="articleBody">
