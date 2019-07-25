@@ -10,8 +10,8 @@ categories: 前端
 timestamp: 1563952168
 comments: true
 date: 2019-07-24 15:09:28
-tags: TypeScripe
-keywords: TypeScripe
+tags: TypeScript
+keywords: TypeScript
 description:
 photos:
 - /img/2019/typescript.jpg
