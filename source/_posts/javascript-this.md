@@ -38,7 +38,7 @@ obj.getA();
 
 ### 作为普通函数调用
 
-当函数不作为对象的属性被调用时，即普通函数方式，this 总是指向全局对象。在浏览器的 JavaScript 里，这个全局对象是 window 对象。
+当函数不作为对象的属性被调用时，即普通函数方式，this 总是指向全局对象。在浏览器的 JavaScript 里，这个全局对象是 window 对象。但需要注意的时，在严格模式下， this 为 undefined 而不是 window。
 
 ```javascript
 window.name = 'globalName';
