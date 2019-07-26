@@ -35,7 +35,7 @@ let greeter = new Greeter("world");
 
 ### 继承
 
-和 Java 中一样，类之间是可以继承。
+和 Java 中一样，类之间是可以继承的。
 
 ```ts
 class Animal {
