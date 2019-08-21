@@ -1,5 +1,5 @@
 ---
-title: 'TypeScript 之 基础类型'
+title: 'TypeScript 之 类型'
 entitle: typescript-type
 author: haohaio
 avatar: /images/favicon.png
@@ -16,6 +16,8 @@ description:
 photos:
 - /img/2019/typescript.jpg
 ---
+
+## 基础类型
 
 ### boolean
 
@@ -157,7 +159,53 @@ create(false); // Error
 create(undefined); // Error
 ```
 
-### 类型断言
+## 高级类型
+
+### 交叉类型
+
+交叉类型是将多个类型合并为一个类型：
+
+```ts
+function extend<T, U>(first: T, second: U): T & U {
+    let result = <T & U>{};
+    for (let id in first) {
+        (<any>result)[id] = (<any>first)[id];
+    }
+    for (let id in second) {
+        if (!result.hasOwnProperty(id)) {
+            (<any>result)[id] = (<any>second)[id];
+        }
+    }
+    return result;
+}
+
+class Person {
+    constructor(public name: string) { }
+}
+interface Loggable {
+    log(): void;
+}
+class ConsoleLogger implements Loggable {
+    log() {
+        // ...
+    }
+}
+var jim = extend(new Person("Jim"), new ConsoleLogger());
+var n = jim.name;
+jim.log();
+```
+
+### 联合类型（Union Types）
+
+```ts
+function padLeft(value: string, padding: string | number) {
+  // ...
+}
+
+let indentedString = padLeft("Hello world", true); // Error: 类型“true”的参数不能赋给类型“string | number”的参数
+```
+
+## 类型断言
 
 类型断言好比其它语言里的类型转换，但是不进行特殊的数据检查和解构。 它没有运行时的影响，只是在编译阶段起作用。 TypeScript会假设你已经进行了必须的检查。
 
@@ -167,8 +215,59 @@ create(undefined); // Error
 let someValue: any = "this is a string";
 let strLength: number = (<string>someValue).length;
 
+// 在JSX中，只能使用 as 语法断言。
 let someValue: any = "this is a string";
 let strLength: number = (someValue as string).length;
+
+let someValue: number = 123;
+let strLength: number = (someValue as string).length; // Error: Conversion of type 'number' to type 'string' may be a mistake
+
+let someValue: any = 123;
+let strLength: number = (someValue as string).length; // OK
+
+let someValue: any = [1, 2, 3];
+let strLength: number = (someValue as string).length; // OK
 ```
 
-> 在JSX中，只能使用 as 语法断言。
+## 类型推论
+
+TypeScript 里，在有些没有明确指出类型的地方，类型推论会帮助提供类型。
+
+### 最佳通用类型
+
+最终的通用类型取自候选类型，计算通用类型算法会考虑所有的候选类型，并给出一个兼容所有候选类型的类型。
+
+```ts
+let x = 3; // x: number
+let x = [0, 1, null]; // x: number[]
+let x = [0, 1, "hello"]; // x: (string | number)[]
+```
+
+当候选类型共享相同的通用类型，但类型推论并不能帮我们推论出这个通用类型，此时我们可以手动指出这个通用类型
+
+```ts
+// Rhino、Elephant、Snake 均继承自 Animal
+let zoo = [new Rhino(), new Elephant(), new Snake()]; // (Rhino | Elephant | Snake)[]
+
+// 指出通用类型
+let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+
+```
+
+### 上下文类型
+
+TypeScript类型推论也可能按照相反的方向进行。 这被叫做“按上下文归类”:
+
+```ts
+// mouseEvent 会被推断为 MouseEvent 类型
+window.onmousedown = function (mouseEvent) {
+  console.log(mouseEvent.number);  // Error: 类型 MouseEvent 上不存在属性 number
+};
+```
+
+```ts
+// 当上下文类型表达式包含了明确的类型信息，上下文的类型被忽略
+window.onmousedown = function (mouseEvent: any) {
+  console.log(mouseEvent.number);  // OK
+};
+```
