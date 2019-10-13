@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]21. Merge Two Sorted Lists'
+title: "[Java LeetCode]21. Merge Two Sorted Lists"
 entitle: leetcode-merge-two-sorted-lists
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories:  LeetCode
+categories: 数据结构
 timestamp: 1545916286
 comments: true
 date: 2018-12-27 21:11:26
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Merge Two Sorted Lists
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/merge-two-sorted-lists/)

@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]9. Palindrome Number'
-entitle: 'leetcode-palindrome-number'
+title: "[Java LeetCode]9. Palindrome Number"
+entitle: "leetcode-palindrome-number"
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1545445186
 comments: true
 date: 2018-12-22 10:19:46
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Palindrome Number
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/reverse-integer/)
@@ -71,7 +71,7 @@ class Solution {
 }
 ```
 
-### 解法2
+### 解法 2
 
 但其实我们不需要将数字完全反转进行比对，只需要将数字反转一半进行然后与前面一半的数字进行比对即可。代码如下：
 

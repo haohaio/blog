@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]14. Longest Common Prefix'
+title: "[Java LeetCode]14. Longest Common Prefix"
 entitle: leetcode-longest-common-prefix
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1545787396
 comments: true
 date: 2018-12-26 09:23:16
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Longest Common Prefix
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/longest-common-prefix/)

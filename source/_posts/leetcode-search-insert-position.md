@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]35. Search Insert Position'
+title: "[Java LeetCode]35. Search Insert Position"
 entitle: leetcode-search-insert-position
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: 前端
+categories: 数据结构
 timestamp: 1547171975
 comments: true
 date: 2019-01-11 09:59:35
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Search Insert Position
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/search-insert-position/)

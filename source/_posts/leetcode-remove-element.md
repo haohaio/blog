@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]27. Remove Element'
+title: "[Java LeetCode]27. Remove Element"
 entitle: leetcode-remove-element
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1546528983
 comments: true
 date: 2019-01-03 23:23:03
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Remove Element
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/remove-element/)

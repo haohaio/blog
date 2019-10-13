@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]1. Two Sum'
-entitle: 'leetcode-two-sum'
+title: "[Java LeetCode]1. Two Sum"
+entitle: "leetcode-two-sum"
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1545398651
 comments: true
 date: 2018-12-21 21:24:11
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Two Sum
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/two-sum/)

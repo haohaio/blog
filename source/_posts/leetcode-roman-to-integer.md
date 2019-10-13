@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]13. Roman to Integer'
+title: "[Java LeetCode]13. Roman to Integer"
 entitle: leetcode-roman-to-integer
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1545615646
 comments: true
 date: 2018-12-24 09:40:46
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Roman to Integer
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/roman-to-integer/)

@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]26. Remove Duplicates from Sorted Array'
+title: "[Java LeetCode]26. Remove Duplicates from Sorted Array"
 entitle: leetcode-remove-duplicates-from-sorted-array
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1546048971
 comments: true
 date: 2018-12-29 10:02:51
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Remove Duplicates from Sorted Array
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)

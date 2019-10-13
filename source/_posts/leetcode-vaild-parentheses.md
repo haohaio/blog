@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]20. Vaild Parentheses'
+title: "[Java LeetCode]20. Vaild Parentheses"
 entitle: leetcode-vaild-parentheses
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: LeetCode
+categories: 数据结构
 timestamp: 1545834750
 comments: true
 date: 2018-12-26 22:32:30
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Vaild Parentheses
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/valid-parentheses/)

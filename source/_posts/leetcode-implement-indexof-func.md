@@ -1,21 +1,21 @@
 ---
-title: '[Java LeetCode]28. Implement strStr()'
+title: "[Java LeetCode]28. Implement strStr()"
 entitle: leetcode-implement-indexof-func
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: 前端
+categories: 数据结构
 timestamp: 1547109759
 comments: true
 date: 2019-01-10 16:42:39
 tags:
-- LeetCode
+  - LeetCode
 keywords:
 description: Implement strStr()
 photos:
-- /img/2018/leetcode.png
+  - /img/2018/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/implement-strstr/)
@@ -42,7 +42,7 @@ Clarification:
 
 What should we return when needle is an empty string? This is a great question to ask during an interview.
 
-For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's [strStr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)).
+For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's [strStr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](<https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)>).
 
 ### 解法
 

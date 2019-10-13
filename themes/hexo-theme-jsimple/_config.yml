@@ -2,7 +2,6 @@
 siteName: haohaio
 shortName: 嗨
 
-
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 fullHttps: true
 
@@ -17,10 +16,8 @@ homePageSortType: -1
 # Home page article shown number
 homeArticleShown: 10
 
-
 # your site build time or domain buy time
 siteBuildingTime: 12/08/2018
-
 
 # Top navigate menu name
 ## Notice:
@@ -29,16 +26,15 @@ siteBuildingTime: 12/08/2018
 menu:
   前端: front-end
   后端: back-end
-  LeetCode: leetcode
+  数据结构: data-structure
   其它: others
 
 # Left menu of single pages settings
 ## Notice: faName is FontAwesome style name
 leftPagesMenu:
-- uri: help
-  title: 帮助
-  faName: fa-question-circle
-
+  - uri: help
+    title: 帮助
+    faName: fa-question-circle
 
 # cover info config
 coverTitle: 努力学习，艰苦奋斗
@@ -58,7 +54,6 @@ postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之�
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 
-
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
@@ -73,7 +68,6 @@ gitment:
 # disqus shortName
 # disqus_shortname:
 disqus_shortname: haohaio
-
 
 # Analytics
 # tentcentAnalyticsId:

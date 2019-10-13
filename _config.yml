@@ -9,8 +9,8 @@ keywords: IT，技术博客，笔记
 description: 好记性不如烂笔头
 author: haohaio
 language:
-- zh-cn
-- en
+  - zh-cn
+  - en
 
 timezone:
 
@@ -55,7 +55,7 @@ default_category: 前端
 category_map:
   前端: front-end
   后端: back-end
-  LeetCode: leetcode
+  数据结构: data-structure
   其它: others
 tag_map:
   iOS: iOS
@@ -85,27 +85,25 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 
-
 theme: hexo-theme-jsimple
 #theme: hexo-theme-hipaper
-
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-- type: git
-  repo: git@github.com:haohaio/haohaio.git
-  branch: master
-- type: git
-  repo: git@git.dev.tencent.com:nook/nook.coding.me.git
-  branch: coding-pages
-- type: git
-  repo: git@gitee.com:haohaio/haohaio.git
-  branch: master
+  - type: git
+    repo: git@github.com:haohaio/haohaio.git
+    branch: master
+  - type: git
+    repo: git@git.dev.tencent.com:nook/nook.coding.me.git
+    branch: coding-pages
+  - type: git
+    repo: git@gitee.com:haohaio/haohaio.git
+    branch: master
 
 # Backup settings see:https://github.com/coneycode/hexo-git-backup
 backup:
   type: git
-  message: backup my blog 
+  message: backup my blog
   repository:
     github: git@github.com:haohaio/blog.git,master
