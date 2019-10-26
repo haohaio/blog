@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "排序之希尔排序"
 entitle: shell-sort
 author: haohaio
 avatar: /images/favicon.png
@@ -70,26 +70,26 @@ public class ShellSort {
 
 来看下完整的排序过程：
 
-- do...while 第 1 次循环，increment = 4，for循环第 1 次, i = 4，current = arr[4] = 3, preIndex = 0，current < arr[0] = 9，进入内层 while 循环，arr[4] = arr[0] = 9，preIndex = -4 < 0，跳出循环。arr[0] = current = 3。此时序列为 {3, 1, 5, 8, 9, 7, 4, 6, 2}。
-- for循环第 2 次，i = 5，current = arr[5] = 7，preIndex = 1，current > arr[1] = 1，不进入内层 while 循环。此时序列仍为 {3, 1, 5, 8, 9, 7, 4, 6, 2}。
-- for循环第 3 次，i = 6，current = arr[6] = 4，preIndex = 2，current < arr[2] = 5，进入内层 while 循环，arr[6] = arr[2] = 5，preIndex = -2，跳出循环。arr[2] = current = 4。此时序列仍为 {3, 1, 4, 8, 9, 7, 5, 6, 2}。
-- for循环第 4 次，i = 7，current = arr[7] = 6，preIndex = 3，current < arr[3] = 8，进入内层 while 循环，arr[7] = arr[3] = 8，preIndex = -1，跳出循环。arr[3] = current = 6。此时序列仍为 {3, 1, 4, 6, 9, 7, 5, 8, 2}。
-- for循环第 5 次，i = 8，current = arr[8] = 2，preIndex = 4，current < arr[4] = 9，进入内层 while 循环，arr[8] = arr[4] = 9，preIndex = 0，current < arr[0] = 3，再次进入 while 循环，arr[4] = arr[0] = 3，preIndex = -4，跳出循环。arr[0] = current = 2。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。一轮循环结束。
-- do...while 第 2 次循环，increment = 2，for循环第 1 次, i = 2，current = arr[2] = 4, preIndex = 0，current > arr[0] = 2，不进入内层 while 循环。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。
-- for循环第 2 次, i = 3，current = arr[3] = 6, preIndex = 1，current > arr[1] = 1，不进入内层 while 循环。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。
-- for循环第 3 次, i = 4，current = arr[4] = 3, preIndex = 2，current < arr[2] = 4，进入内层 while 循环，arr[4] = arr[2] = 4，preIndex = 0，current > arr[0] = 2，跳出循环。arr[2] = current = 3。此时序列为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 4 次, i = 5，current = arr[5] = 7, preIndex = 3，current > arr[3] = 6，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 5 次, i = 6，current = arr[6] = 5, preIndex = 4，current > arr[4] = 3，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 6 次, i = 7，current = arr[7] = 8, preIndex = 5，current > arr[5] = 7，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 7 次, i = 8，current = arr[8] = 9, preIndex = 6，current > arr[6] = 5，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。一轮循环结束。
-- do...while 第 3 次循环，increment = 3，for循环第 1 次, i = 1，current = arr[1] = 1, preIndex = 0，current > arr[0] = 2，进入内层 while 循环，arr[1] = arr[0] = 2，preIndex = -1 < 0，跳出循环。arr[0] = current = 1。此时序列仍为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 2 次, 此时序列为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 3 次, 此时序列为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
-- for循环第 4 次, 此时序列为 {1, 2, 3, 4, 6, 7, 5, 8, 9}。
-- for循环第 5 次, 此时序列为 {1, 2, 3, 4, 6, 7, 5, 8, 9}。
-- for循环第 6 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。
-- for循环第 7 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。
-- for循环第 8 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。最后一轮循环结束，完成排序。
+- do...while 第 1 次循环，increment = 4，for 循环第 1 次, i = 4，current = arr[4] = 3, preIndex = 0，current < arr[0] = 9，进入内层 while 循环，arr[4] = arr[0] = 9，preIndex = -4 < 0，跳出循环。arr[0] = current = 3。此时序列为 {3, 1, 5, 8, 9, 7, 4, 6, 2}。
+- for 循环第 2 次，i = 5，current = arr[5] = 7，preIndex = 1，current > arr[1] = 1，不进入内层 while 循环。此时序列仍为 {3, 1, 5, 8, 9, 7, 4, 6, 2}。
+- for 循环第 3 次，i = 6，current = arr[6] = 4，preIndex = 2，current < arr[2] = 5，进入内层 while 循环，arr[6] = arr[2] = 5，preIndex = -2，跳出循环。arr[2] = current = 4。此时序列仍为 {3, 1, 4, 8, 9, 7, 5, 6, 2}。
+- for 循环第 4 次，i = 7，current = arr[7] = 6，preIndex = 3，current < arr[3] = 8，进入内层 while 循环，arr[7] = arr[3] = 8，preIndex = -1，跳出循环。arr[3] = current = 6。此时序列仍为 {3, 1, 4, 6, 9, 7, 5, 8, 2}。
+- for 循环第 5 次，i = 8，current = arr[8] = 2，preIndex = 4，current < arr[4] = 9，进入内层 while 循环，arr[8] = arr[4] = 9，preIndex = 0，current < arr[0] = 3，再次进入 while 循环，arr[4] = arr[0] = 3，preIndex = -4，跳出循环。arr[0] = current = 2。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。一轮循环结束。
+- do...while 第 2 次循环，increment = 2，for 循环第 1 次, i = 2，current = arr[2] = 4, preIndex = 0，current > arr[0] = 2，不进入内层 while 循环。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。
+- for 循环第 2 次, i = 3，current = arr[3] = 6, preIndex = 1，current > arr[1] = 1，不进入内层 while 循环。此时序列仍为 {2, 1, 4, 6, 3, 7, 5, 8, 9}。
+- for 循环第 3 次, i = 4，current = arr[4] = 3, preIndex = 2，current < arr[2] = 4，进入内层 while 循环，arr[4] = arr[2] = 4，preIndex = 0，current > arr[0] = 2，跳出循环。arr[2] = current = 3。此时序列为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 4 次, i = 5，current = arr[5] = 7, preIndex = 3，current > arr[3] = 6，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 5 次, i = 6，current = arr[6] = 5, preIndex = 4，current > arr[4] = 3，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 6 次, i = 7，current = arr[7] = 8, preIndex = 5，current > arr[5] = 7，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 7 次, i = 8，current = arr[8] = 9, preIndex = 6，current > arr[6] = 5，不进入内层 while 循环。此时序列仍为 {2, 1, 3, 6, 4, 7, 5, 8, 9}。一轮循环结束。
+- do...while 第 3 次循环，increment = 3，for 循环第 1 次, i = 1，current = arr[1] = 1, preIndex = 0，current > arr[0] = 2，进入内层 while 循环，arr[1] = arr[0] = 2，preIndex = -1 < 0，跳出循环。arr[0] = current = 1。此时序列仍为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 2 次, 此时序列为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 3 次, 此时序列为 {1, 2, 3, 6, 4, 7, 5, 8, 9}。
+- for 循环第 4 次, 此时序列为 {1, 2, 3, 4, 6, 7, 5, 8, 9}。
+- for 循环第 5 次, 此时序列为 {1, 2, 3, 4, 6, 7, 5, 8, 9}。
+- for 循环第 6 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。
+- for 循环第 7 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。
+- for 循环第 8 次, 此时序列为 {1, 2, 3, 4, 5, 6, 7, 8, 9}。最后一轮循环结束，完成排序。
 
 可以看到希尔排序是将关键字较小的记录不是一步一步地往前挪动，而是跳跃式的往前移，从而使得每次完成一轮循环后，整个序列就朝着有序坚实地迈进一步。这就是希尔排序的关键所在。
 

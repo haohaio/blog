@@ -1,19 +1,21 @@
 ---
-title: '排序之直接插入排序'
+title: "排序之直接插入排序"
 entitle: insert-sort
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
 categories: 前端
 timestamp: 1571127274
 comments: true
 date: 2019-10-15 16:14:34
 tags:
+  - 排序
 keywords:
 description:
 photos:
+  - /img/2019/sort.jpg
 ---
 
 先来看下直接插入排序的基本思想：
