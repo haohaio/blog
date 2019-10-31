@@ -24,7 +24,7 @@ Given an array of integers, return indices of the two numbers such that they add
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-### 解法一：
+### 解法一
 
 暴力解决，循环两次搞定。
 
@@ -42,7 +42,7 @@ public int[] twoSum(int[] nums, int target) {
 }
 ```
 
-### 解法二：
+### 解法二
 
 利用 HashMap 作为存储，key 为当前元素值，value 为当前元素值的索引。遍历时判断 map 中是否存在 key 加上当前元素值可以等于目标值，如果存在，就证明 key 为第一个值，当前元素值为第二个值，各自取其索引即可。
 
