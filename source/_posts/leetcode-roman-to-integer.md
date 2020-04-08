@@ -68,7 +68,7 @@ Example 4:
 ```code
 Input: "LVIII"
 Output: 58
-Explanation: L = 50, V = 30 and III = 3.
+Explanation: L = 50, V = 5 and III = 3.
 ```
 
 Example 5:
