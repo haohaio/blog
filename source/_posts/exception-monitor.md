@@ -10,10 +10,11 @@ categories: 前端
 timestamp: 1586335615
 comments: true
 date: 2020-04-08 16:46:55
-tags:
+tags: JavaScript
 keywords:
 description:
 photos:
+- /img/2019/javascript.jpg
 ---
 
 对于前端应用来说， 对异常的监控是很有必要的。异常也有很多种，比如 js 运行时异常，加载静态资源异常，接口请求异常等等。今天就来大概了解一下如何进行异常监控。
