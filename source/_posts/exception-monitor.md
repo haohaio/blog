@@ -1,6 +1,6 @@
 ---
 title: "前端异常监控"
-entitle: exception_monitor
+entitle: exception-monitor
 author: haohaio
 avatar: /images/favicon.png
 authorLink: "https://haohaio.github.io"

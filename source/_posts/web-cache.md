@@ -1,6 +1,6 @@
 ---
 title: '浏览器的缓存机制'
-entitle: web_cache
+entitle: web-cache
 author: haohaio
 avatar: /images/favicon.png
 authorLink: 'https://haohaio.github.io'
