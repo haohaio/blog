@@ -94,7 +94,7 @@ error: null
 
 ### 静态资源异常
 
-> 当一项资源（如 `<img>` 或 `<script>`）加载失败，并执行该元素上的 onerror() 处理函数。加载资源的元素会触发一个 Event 接口的 error 事件，并执行该元素上的 onerror() 处理函数。这些 error 事件不会向上冒泡到 window，不过能被单一的 window.addEventListener 捕获。
+> 当一项资源（如 `<img>` 或 `<script>`）加载失败，加载资源的元素会触发一个 Event 接口的 error 事件，并执行该元素上的 onerror() 处理函数。这些 error 事件不会向上冒泡到 window，不过能被单一的 window.addEventListener 捕获。
 
 因此只用 `window.onerror` 来监测前端项目异常的话，功能还不够完善。但我们可以使用 `window.addEventListener('error', function(event) {}, true)` 来捕获静态资源异常
 
