@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Git 常用命令
 photos:
-- /img/2018/git.png
+- /img/tags/git.png
 ---
 
 ## 配置

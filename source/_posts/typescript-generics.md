@@ -14,7 +14,7 @@ tags: TypeScript
 keywords: Generics
 description: 
 photos:
-- /img/2019/typescript.jpg
+- /img/tags/typescript.jpg
 ---
 
 ## 泛型变量

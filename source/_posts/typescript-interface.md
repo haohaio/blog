@@ -14,7 +14,7 @@ tags: TypeScript
 keywords: TypeScript
 description: TypeScript
 photos:
-- /img/2019/typescript.jpg
+- /img/tags/typescript.jpg
 ---
 
 TypeScript 的核心原则之一是对值所具有的结构进行类型检查。 在 TypeScript 里，接口的作用就是为这些类型命名和以及定义校验规则。

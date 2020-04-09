@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Two Sum
 photos:
-  - /img/2018/leetcode.png
+  - /img/tags/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/two-sum/)

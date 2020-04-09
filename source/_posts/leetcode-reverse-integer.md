@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Reverse Integer
 photos:
-  - /img/2018/leetcode.png
+  - /img/tags/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/reverse-integer/)

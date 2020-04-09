@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-  - /img/2019/sort.jpg
+  - /img/tags/sort.jpg
 ---
 
 希尔排序（Shell Sort）是 D.L.Shell 与 1959 年提出来的一种排序算法，在这之前排序算法的时间复杂度基本都是 O(n<sup>2</sup>)的，希尔排序算法是突破这个时间复杂度的第一批算法之一。

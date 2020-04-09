@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Canvas的绘图环境
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 canvas 元素仅仅是为了充当绘图环境对象的容器而存在的，该环境对象提供了全部的绘制功能。本篇文章我们只关注 2d 绘图环境。

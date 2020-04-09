@@ -15,7 +15,7 @@ tags:
 keywords:
 description: 使用 Docker 搭建 MySQL 服务
 photos:
-- /img/2019/mysql.png
+- /img/tags/mysql.png
 ---
 
 最近在学习 Spring Boot 的时候，需要搭建一个 mysql 的服务，我们可以通过 docker 非常方便地搭建一个 mysql 服务。只需一个命令：

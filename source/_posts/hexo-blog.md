@@ -15,7 +15,7 @@ tags:
 keywords: 
 description: 使用 Hexo 快速搭建个人博客
 photos:
-- /img/2019/hexo.png
+- /img/tags/hexo.png
 ---
 
 ## 为什么要搭建个人博客

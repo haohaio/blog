@@ -15,7 +15,7 @@ tags:
 keywords:
 description: canvas 元素的基本介绍
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 # 简介

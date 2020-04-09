@@ -14,7 +14,7 @@ tags: DesignPatterns
 keywords:
 description: 单例设计模式
 photos:
-- /img/2019/design.png
+- /img/tags/design.png
 ---
 
 Singleton 可以说是设计模式中最简单的一个模式了，但是我们要想用好它的话，也不简单~~

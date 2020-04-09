@@ -15,7 +15,7 @@ tags:
 keywords: html, css, animation
 description: css transition
 photos:
-- /img/2018/css_animation.jpg
+- /img/tags/css_animation.jpg
 ---
 
 目前Web动画主要有两大实现途径：

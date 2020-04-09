@@ -15,7 +15,7 @@ tags:
 keywords: 
 description: '@SpringBootApplication 简介'
 photos:
-- /img/2018/spring.jpg
+- /img/tags/spring.jpg
 ---
 
 我们经常可以在 Spring Boot 的引导类中见到如下代码：

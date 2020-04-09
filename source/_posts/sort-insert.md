@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-  - /img/2019/sort.jpg
+  - /img/tags/sort.jpg
 ---
 
 先来看下直接插入排序的基本思想：

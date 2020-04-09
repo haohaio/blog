@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-  - /img/2019/sort.jpg
+  - /img/tags/sort.jpg
 ---
 
 先来看下简单选择排序的基本思想：

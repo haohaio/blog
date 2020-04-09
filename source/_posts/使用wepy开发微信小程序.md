@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Hello WePY
 photos:
-- /img/2018/wechat.png
+- /img/tags/wechat.png
 ---
 
 ## 项目搭建

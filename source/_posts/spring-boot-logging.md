@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Spring Boot 日志系统
 photos:
-- /img/2018/spring.jpg
+- /img/tags/spring.jpg
 ---
 
 Spring Boot 给我们集成了默认的日志系统，但有时我们需要自定义一些配置，今天我们就来了解一下如何进行自定义配置。

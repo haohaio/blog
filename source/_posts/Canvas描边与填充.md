@@ -15,7 +15,7 @@ tags:
 keywords:
 description: 通过描边与填充来绘制图形
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 Canvas 的绘制操作主要分为两种：描边与填充。

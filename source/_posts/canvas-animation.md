@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 ### 使用 requestAnimationFrame() 方法让做动画

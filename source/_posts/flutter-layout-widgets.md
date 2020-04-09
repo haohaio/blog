@@ -15,7 +15,7 @@ tags:
 keywords: Flutter
 description: Flutter 布局组件简介
 photos:
-- /img/2019/flutter.png
+- /img/tags/flutter.png
 ---
 
 Flutter 是使用 Layout Widgets 来进行布局的，今天我们就来了解一下相关的布局组件。

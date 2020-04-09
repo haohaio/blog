@@ -15,7 +15,7 @@ tags:
 keywords:
 description: 通过路径来描边和填充
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 除了绘制矩形的两个 API 外，Canvas 的绘图环境还提供了其它一些方法用于绘制更加复杂的图形。这些方法都是基于路径 (path) 的。

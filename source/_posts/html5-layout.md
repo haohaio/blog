@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-- /img/2019/html5.jpg
+- /img/tags/html5.jpg
 ---
 
 由于现在的移动设备屏幕尺寸众多，所以要做好适配真的是一个让人头痛的问题。今天就来了解一下如何解决这个问题。

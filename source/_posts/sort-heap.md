@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-  - /img/2019/sort.jpg
+  - /img/tags/sort.jpg
 ---
 
 堆是具有下列性质的完全二叉树：每个节点的值都大于或等于其左右孩子节点的值，称为大顶堆；或者每个节点的值都小于或等于其左右孩子节点的值，称为小顶堆，如下图所示：

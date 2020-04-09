@@ -15,7 +15,7 @@ tags:
 keywords: Flutter
 description: Flutter 快速入门
 photos:
-- /img/2019/flutter.png
+- /img/tags/flutter.png
 ---
 
 ## 简介

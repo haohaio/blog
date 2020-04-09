@@ -14,7 +14,7 @@ tags: TypeScript
 keywords: TypeScript
 description:
 photos:
-- /img/2019/typescript.jpg
+- /img/tags/typescript.jpg
 ---
 
 ### 函数类型

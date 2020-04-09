@@ -15,7 +15,7 @@ tags:
 keywords:
 description: 使用 Canvas 绘制一个仪表盘
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 基于之前所学的关于 Canvas 的知识，来完成一个综合实例，绘制一个刻度仪表盘。

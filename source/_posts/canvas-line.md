@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-- /img/2018/canvas.gif
+- /img/tags/canvas.gif
 ---
 
 Canvas 绘图环境提供了两个可以用来创建线段的方法：

@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Search Insert Position
 photos:
-  - /img/2018/leetcode.png
+  - /img/tags/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/search-insert-position/)

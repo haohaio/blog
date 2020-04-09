@@ -14,7 +14,7 @@ tags: JavaScript
 keywords: JavaScript
 description: JavaScript
 photos:
-- /img/2019/javascript.jpg
+- /img/tags/javascript.jpg
 ---
 
 JavaScript 的 this 总是指向一个对象，而具体指向那个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。

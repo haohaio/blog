@@ -15,7 +15,7 @@ tags:
 keywords:
 description:
 photos:
-  - /img/2019/sort.jpg
+  - /img/tags/sort.jpg
 ---
 
 > 归并，在数据结构中，是指将两个或两个以上的有序表组合成一个新的有序表

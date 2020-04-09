@@ -15,7 +15,7 @@ tags:
 keywords:
 description: 使用 HSL 来设置颜色值
 photos:
-- /img/2018/css.jpg
+- /img/tags/css.jpg
 ---
 
 CSS3 的 HSL 方法已经被现代浏览器广泛的支持，但在日常开发中还是很少使用，今天我们就来简单了解一下，示例代码如下：

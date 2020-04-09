@@ -14,7 +14,7 @@ tags: DesignPatterns
 keywords:
 description: 工厂设计模式
 photos:
-- /img/2019/design.png
+- /img/tags/design.png
 ---
 
 ## 简单工厂模式

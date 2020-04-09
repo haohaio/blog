@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Remove Duplicates from Sorted Array
 photos:
-  - /img/2018/leetcode.png
+  - /img/tags/leetcode.png
 ---
 
 [原题链接](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)

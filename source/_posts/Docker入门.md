@@ -15,7 +15,7 @@ tags:
 keywords:
 description: Docker 的一些基本概念及常用命令
 photos:
-- /img/2018/docker.png
+- /img/tags/docker.png
 ---
 
 ## 简介

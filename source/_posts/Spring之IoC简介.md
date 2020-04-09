@@ -15,7 +15,7 @@ tags:
 keywords:
 description: IoC 简介
 photos:
-- /img/2018/spring.jpg
+- /img/tags/spring.jpg
 ---
 
 IoC (Inversion of Control)，中文通常翻译为“控制反转”。

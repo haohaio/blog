@@ -14,7 +14,7 @@ tags: TypeScript
 keywords: TypeScript
 description: TypeScript
 photos:
-- /img/2019/typescript.jpg
+- /img/tags/typescript.jpg
 ---
 
 我们可以像在 Java 里一样，声明一个 Greeter 类，然后使用 new 来构造一个 Greeter 类的实例：

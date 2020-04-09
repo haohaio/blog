@@ -14,7 +14,7 @@ tags: Java
 keywords:
 description: Java内存模型简介
 photos: 
-- /img/2019/java.png
+- /img/tags/java.png
 ---
 
 ## 简介

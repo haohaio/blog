@@ -14,7 +14,7 @@ tags: TypeScript
 keywords: Enum
 description:
 photos:
-- /img/2019/typescript.jpg
+- /img/tags/typescript.jpg
 ---
 
 TypeScript支持基于数字和字符串的枚举。
