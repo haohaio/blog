@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]1. Two Sum"
+title: "[JavaScript LeetCode]1. 两数之和"
 entitle: "leetcode-two-sum"
 author: haohaio
 avatar: /images/favicon.png
@@ -18,49 +18,63 @@ photos:
   - /img/tags/leetcode.png
 ---
 
-[原题链接](https://leetcode.com/problems/two-sum/)
+[原题链接](https://leetcode-cn.com/problems/two-sum/)
 
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+> 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+
+示例：
+
+```code
+给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+```
 
 ### 解法一
 
-暴力解决，循环两次搞定。
-
-```java
-public int[] twoSum(int[] nums, int target) {
-    int len = nums.length;
-    for (int i = 0; i < len; i++) {
-        for (int j = i + 1; j < len; j++) {
-            if (nums[j] == target - nums[i]) {
-                return new int[] { i, j };
-            }
-        }
+```js
+var twoSum = function (nums, target) {
+  for (var i = 0; i < nums.length; i++) {
+    var dif = target - nums[i];
+    for (var j = i + 1; j < nums.length; j++) {
+      if (nums[j] === dif) {
+        return [i, j];
+      }
     }
-    throw new IllegalArgumentException("No two sum solution");
-}
+  }
+};
 ```
 
 ### 解法二
 
-利用 HashMap 作为存储，key 为当前元素值，value 为当前元素值的索引。遍历时判断 map 中是否存在 key 加上当前元素值可以等于目标值，如果存在，就证明 key 为第一个值，当前元素值为第二个值，各自取其索引即可。
-
-> 维护数组中每个元素到其索引的映射的最佳方法是就是哈希表。
-
-```java
-public int[] twoSum(int[] nums, int target) {
-        int len = nums.length;
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < len; i++) {
-            int complement = target - nums[i];
-
-            if (map.containsKey(complement)) {
-                return new int[]{map.get(complement), i};
-            }
-
-            map.put(nums[i], i);
-        }
-        throw new IllegalArgumentException("No two sum solution");
+```js
+var twoSum = function (nums, target) {
+  var temp = {};
+  for (var i = 0; i < nums.length; i++) {
+    var dif = target - nums[i];
+    if (temp[dif] !== undefined) {
+      return [temp[dif], i];
     }
+
+    temp[nums[i]] = i;
+  }
+};
+```
+
+```js
+var twoSum = function (nums, target) {
+  let map = new Map();
+  for (var i = 0; i < nums.length; i++) {
+    let dif = target - nums[i];
+
+    if (map.has(dif)) {
+      return [map.get[i], i];
+    }
+
+    map.set(nums[i], i);
+  }
+};
 ```

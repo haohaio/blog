@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]7. Reverse Integer"
+title: "[JavaScript LeetCode]7. Reverse Integer"
 entitle: "leetcode-reverse-integer"
 author: haohaio
 avatar: /images/favicon.png
@@ -20,70 +20,62 @@ photos:
 
 [原题链接](https://leetcode.com/problems/reverse-integer/)
 
-Given a 32-bit signed integer, reverse digits of an integer.
+给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
 
-Example 1:
-
-```code
-Input: 123
-Output: 321
-```
-
-Example 2:
+示例:
 
 ```code
-Input: -123
-Output: -321
+输入: 123
+输出: 321
+
+输入: -123
+输出: -321
+
+输入: 120
+输出: 21
 ```
 
-Example 3:
+> 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
 
-```code
-Input: 120
-Output: 21
-```
+### 解法一
 
-Note:
+```js
+var reverse = function (x) {
+  let rev = 0;
+  while (x !== 0) {
+    let pop = x % 10;
+    x = parseInt(x / 10);
 
-> Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31, 2^31 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
-
-### 解法：
-
-- 对数字进行反转的方法如下
-
-```java
-int pop = x % 10;
-x /= 10;
-
-int rev = 0;
-rev = rev * 10 + pop;
-```
-
-- 在 32 位的机器上，Integer 的取值范围为 [-2^31, 2^31 -1], 即 [-2147483648, 2147483647]。所以最后反转的结果有可能会超出取值范围，需要进行特殊处理。
-
-代码如下：
-
-```java
-class Solution {
-    public int reverse(int x) {
-        int rev = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x /= 10;
-
-            // Integer.MAX_VALUE = 2147483647
-            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) {
-              return 0;
-            };
-
-            // Integer.MIN_VALUE = -2147483648
-            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) {
-              return 0;
-            };
-
-            rev = rev * 10 + pop;
-        }
-        return rev;
+    if (
+      rev > parseInt((Math.pow(2, 31) - 1) / 10) ||
+      (rev === parseInt((Math.pow(2, 31) - 1) / 10) && pop > 7)
+    ) {
+      return 0;
     }
-}
+
+    if (
+      rev < parseInt(Math.pow(-2, 31) / 10) ||
+      (rev === parseInt(Math.pow(-2, 31) / 10) && pop < -8)
+    ) {
+      return 0;
+    }
+
+    rev = rev * 10 + pop;
+  }
+
+  return rev;
+};
+```
+
+### 解法二
+
+```js
+var reverse = function (x) {
+  var isNegative = x < 0 ? true : false;
+  var target = (isNegative ? -x : x).toString().split("").reverse().join("");
+  target = isNegative ? -target : +target;
+  var outRange = target < Math.pow(-2, 31) || target > Math.pow(2, 31) - 1;
+
+  return outRange ? 0 : target;
+};
 ```

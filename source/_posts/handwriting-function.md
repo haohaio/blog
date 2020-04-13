@@ -67,7 +67,7 @@ function _new(fn, ...args) {
 ### 防抖
 
 ```js
-function debounce(fn) {
+function debounce(fn, delay) {
   let timer = null;
 
   return function () {
@@ -75,7 +75,7 @@ function debounce(fn) {
 
     timer = setTimeout(() => {
       fn.apply(this, arguments);
-    }, 1000);
+    }, delay);
   };
 }
 ```
@@ -83,7 +83,7 @@ function debounce(fn) {
 ### 节流
 
 ```js
-function throttle(fn) {
+function throttle(fn, delay) {
   let canRun = true;
 
   return function () {
@@ -93,7 +93,7 @@ function throttle(fn) {
     setTimeout(() => {
       fn.apply(this, arguments);
       canRun = true;
-    }, 1000);
+    }, delay);
   };
 }
 ```
