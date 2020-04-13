@@ -64,23 +64,23 @@ function _new(fn, ...args) {
 }
 ```
 
-### debounce
+### 防抖
 
 ```js
 function debounce(fn) {
-  let timeout = null;
+  let timer = null;
 
   return function () {
-    clearTimeout(timeout);
+    timer && clearTimeout(timer);
 
-    timeout = setTimeout(() => {
+    timer = setTimeout(() => {
       fn.apply(this, arguments);
     }, 1000);
   };
 }
 ```
 
-### throttle
+### 节流
 
 ```js
 function throttle(fn) {
@@ -143,4 +143,54 @@ function getQuery() {
 
   return query;
 }
+```
+
+### flat
+
+```js
+function _flat(arr) {
+  while (arr.some((item) => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+
+  return arr;
+}
+```
+
+```js
+function _flat(arr) {
+  return arr.reduce((acc, cur) => {
+    return Array.isArray(cur) ? [...acc, ..._flat(cur)] : [...acc, cur];
+  }, []);
+}
+```
+
+```js
+function _flat(arr) {
+  return arr
+    .join(",")
+    .split(",")
+    .map((item) => Number(item));
+}
+```
+
+### 事件代理
+
+```js
+function delegate(ele, selector, type, fn) {
+  function callback(e) {
+    e = e || window.event;
+    const target = e.target || e.srcElement;
+    let selectors = ele.querySelectorAll(selector);
+    selectors = [].slice.call(selectors);
+    if (selectors.includes(target)) {
+      fn.call(target, e);
+    }
+  }
+  ele.addEventListener(type, callback, false);
+}
+
+delegate(document.querySelector("body"), "li", "click", function () {
+  console.log("li 点击事件");
+});
 ```
