@@ -24,7 +24,7 @@ Function.prototype._apply = function (context = window, args = []) {
   const fnKey = "tmp_" + Date.now();
   context[fnKey] = this;
   const res = context[fnKey](...args);
-  delete context[fnKey];
+  Reflect.deleteProperty(context, fnKey);
   return res;
 };
 ```
@@ -36,7 +36,7 @@ Function.prototype._call = function (context = window, ...args) {
   const fnKey = "tmp_" + Date.now();
   context[fnKey] = this;
   const res = context[fnKey](...args);
-  delete context[fnKey];
+  Reflect.deleteProperty(context, fnKey);
   return res;
 };
 ```
