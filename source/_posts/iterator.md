@@ -431,7 +431,7 @@ for (let v of foo()) {
 }
 ```
 
-ES6 还提供了 `yield*` 表达式，在之前提到会调用迭代器接口的场景时，就提到了这个表达式。起作用就是用来在一个 Generator 函数里面执行另一个 Generator 函数。
+ES6 还提供了 `yield*` 表达式，在之前提到会调用迭代器接口的场景时，就提到了这个表达式。其作用就是用来在一个 Generator 函数里面执行另一个 Generator 函数。
 
 ```js
 function* foo() {
