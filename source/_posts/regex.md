@@ -1,5 +1,5 @@
 ---
-title: "正则表达式学习"
+title: "正则表达式"
 entitle: regex
 author: haohaio
 avatar: /images/favicon.png
