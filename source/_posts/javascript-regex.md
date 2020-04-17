@@ -179,7 +179,7 @@ var data = {
   age: 28
 };
 var str = '<div>{{ name }} - {{ age }}</div>';
-var regex = /\{\{\s?(.+?)\s?\}\}/g
+var regex = /\{\{\s*(.+?)\s*\}\}/g;
 str = str.replace(regex, (...args) => {
   return data[args[1]]
 });
