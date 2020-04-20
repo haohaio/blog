@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]9. Palindrome Number"
+title: "[JavaScript LeetCode]9. Palindrome Number"
 entitle: "leetcode-palindrome-number"
 author: haohaio
 avatar: /images/favicon.png
@@ -53,41 +53,55 @@ Coud you solve it without converting the integer to a string?
 
 题意是判断一个有符号整型数是否是回文，即逆序过来的整数和原整数相同。则负数肯定不是，非 0 的 10 的倍数的数也不是。那就把数字进行反转进行比较就可得出结果。代码如下：
 
-```java
-class Solution {
-    public boolean isPalindrome(int x) {
-        if(x < 0 || (x != 0 && x % 10 == 0)) {
-            return false;
-        }
+```js
+var isPalindrome = function (x) {
+  if (x < 0 || (x !== 0 && x % 10 === 0)) {
+    return false;
+  }
 
-        int copyX = x;
-        int revertedNumber = 0;
-        while (copyX != 0) {
-            revertedNumber = revertedNumber * 10 + copyX % 10;
-            copyX /= 10;
-        }
-        return x == reverse;
-    }
-}
+  let copyX = x;
+  let rev = 0;
+  while (copyX !== 0) {
+    rev = rev * 10 + (copyX % 10);
+    copyX = parseInt(copyX / 10);
+  }
+
+  return x === rev;
+};
 ```
 
-### 解法 2
+### 解法二
 
 但其实我们不需要将数字完全反转进行比对，只需要将数字反转一半进行然后与前面一半的数字进行比对即可。代码如下：
 
-```java
-class Solution {
-    public boolean isPalindrome(int x) {
-        if(x < 0 || (x != 0 && x % 10 == 0)) {
-            return false;
-        }
+```js
+var isPalindrome = function (x) {
+  if (x < 0 || (x !== 0 && x % 10 === 0)) {
+    return false;
+  }
 
-        int revertedNumber = 0;
-        while (x > revertedNumber) {
-            revertedNumber = revertedNumber * 10 + x % 10;
-            x /= 10;
-        }
-        return x == revertedNumber || x == revertedNumber / 10;
-    }
-}
+  let rev = 0;
+  while (x > rev) {
+    rev = rev * 10 + (x % 10);
+    x = parseInt(x / 10);
+  }
+
+  return x === rev || x === parseInt(rev / 10);
+};
+```
+
+### 解法三
+
+使用数组的 `reverse()` 方法。
+
+```js
+var isPalindrome = function (x) {
+  if (x < 0 || (x !== 0 && x % 10 === 0)) {
+    return false;
+  }
+
+  let rev = x.toString().split('').reverse().join('')
+
+  return x == rev;
+};
 ```
