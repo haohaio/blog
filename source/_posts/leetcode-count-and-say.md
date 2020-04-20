@@ -1,5 +1,5 @@
 ---
-title: "[JavaScript LeetCode]35. 外观数列"
+title: "[JavaScript LeetCode]38. 外观数列"
 entitle: leetcode-count-and-say
 author: haohaio
 avatar: /images/favicon.png
