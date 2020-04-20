@@ -1,5 +1,5 @@
 ---
-title: "[JavaScript LeetCode]9. Palindrome Number"
+title: "[JavaScript LeetCode]9. 回文数"
 entitle: "leetcode-palindrome-number"
 author: haohaio
 avatar: /images/favicon.png
@@ -13,45 +13,61 @@ date: 2018-12-22 10:19:46
 tags:
   - LeetCode
 keywords:
-description: Palindrome Number
+description: 回文数
 photos:
   - /img/tags/leetcode.png
 ---
 
-[原题链接](https://leetcode.com/problems/reverse-integer/)
+[原题链接](https://leetcode-cn.com/problems/palindrome-number/)
 
-Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 
-Example 1:
+示例:
 
 ```code
-Input: 121
-Output: true
+输入: 121
+输出: true
+
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
 ```
 
 Example 2:
 
 ```code
-Input: -121
-Output: false
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
 ```
 
-Example 3:
+进阶:
 
-```code
-Input: 10
-Output: false
-Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
-```
-
-Follow up:
-
-Coud you solve it without converting the integer to a string?
+你能不将整数转为字符串来解决这个问题吗？
 
 ### 解法一
 
-题意是判断一个有符号整型数是否是回文，即逆序过来的整数和原整数相同。则负数肯定不是，非 0 的 10 的倍数的数也不是。那就把数字进行反转进行比较就可得出结果。代码如下：
+根据题意，可以看出负数肯定不是，非 0 的 10 的倍数的数也不是。把数字转为字符串，然后使用数组的 `reverse()` 方法。
+
+```js
+var isPalindrome = function (x) {
+  if (x < 0 || (x !== 0 && x % 10 === 0)) {
+    return false;
+  }
+
+  let rev = x.toString().split("").reverse().join("");
+
+  return x == rev;
+};
+```
+
+### 解法二
+
+把数字进行反转进行比较就可得出结果。
 
 ```js
 var isPalindrome = function (x) {
@@ -70,7 +86,7 @@ var isPalindrome = function (x) {
 };
 ```
 
-### 解法二
+### 解法三
 
 但其实我们不需要将数字完全反转进行比对，只需要将数字反转一半进行然后与前面一半的数字进行比对即可。代码如下：
 
@@ -87,21 +103,5 @@ var isPalindrome = function (x) {
   }
 
   return x === rev || x === parseInt(rev / 10);
-};
-```
-
-### 解法三
-
-使用数组的 `reverse()` 方法。
-
-```js
-var isPalindrome = function (x) {
-  if (x < 0 || (x !== 0 && x % 10 === 0)) {
-    return false;
-  }
-
-  let rev = x.toString().split('').reverse().join('')
-
-  return x == rev;
 };
 ```
