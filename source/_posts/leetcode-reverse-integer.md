@@ -1,5 +1,5 @@
 ---
-title: "[JavaScript LeetCode]7. Reverse Integer"
+title: "[JavaScript LeetCode]7. 整数反转"
 entitle: "leetcode-reverse-integer"
 author: haohaio
 avatar: /images/favicon.png
