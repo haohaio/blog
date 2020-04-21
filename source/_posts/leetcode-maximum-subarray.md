@@ -1,16 +1,17 @@
 ---
-title: '[JavaScript LeetCode]53. 最大子序和'
+title: "[JavaScript LeetCode]53. 最大子序和"
 entitle: leetcode-maximum-subarray
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
 categories: 数据结构
 timestamp: 1586964829
 comments: true
 date: 2020-04-15 23:33:49
-tags:  LeetCode
+tags:
+  - LeetCode
 keywords:
 description:
 photos:
@@ -42,17 +43,17 @@ photos:
 - 时间复杂度：O(n)
 
 ```js
-var maxSubArray = function(nums) {
-    let ans = nums[0];
-    let sum = 0;
-    for(const num of nums) {
-        if(sum > 0) {
-            sum += num;
-        } else {
-            sum = num;
-        }
-        ans = Math.max(ans, sum);
+var maxSubArray = function (nums) {
+  let ans = nums[0];
+  let sum = 0;
+  for (const num of nums) {
+    if (sum > 0) {
+      sum += num;
+    } else {
+      sum = num;
     }
-    return ans;
+    ans = Math.max(ans, sum);
+  }
+  return ans;
 };
 ```
