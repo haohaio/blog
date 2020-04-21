@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]14. Longest Common Prefix"
+title: "[JavaScript LeetCode]14. 最长公共前缀"
 entitle: leetcode-longest-common-prefix
 author: haohaio
 avatar: /images/favicon.png
@@ -18,86 +18,98 @@ photos:
   - /img/tags/leetcode.png
 ---
 
-[原题链接](https://leetcode.com/problems/longest-common-prefix/)
+[原题链接](https://leetcode-cn.com/problems/longest-common-prefix/)
 
-Write a function to find the longest common prefix string amongst an array of strings.
+编写一个函数来查找字符串数组中的最长公共前缀。
 
-If there is no common prefix, return an empty string "".
+如果不存在公共前缀，返回空字符串 ""。
 
-Example 1:
-
-```code
-Input: ["flower","flow","flight"]
-Output: "fl"
-```
-
-Example 2:
+示例:
 
 ```code
-Input: ["dog","racecar","car"]
-Output: ""
-Explanation: There is no common prefix among the input strings.
+输入: ["flower","flow","flight"]
+输出: "fl"
+
+输入: ["dog","racecar","car"]
+输出: ""
+解释: 输入不存在公共前缀。
 ```
 
-Note:
+说明:
 
-All given inputs are in lowercase letters a-z.
+所有输入只包含小写字母 `a-z`。
 
 ### 解法一
 
 暴力破解。
 
-```java
-class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) {
-            return "";
-        };
+```js
+var longestCommonPrefix = function (strs) {
+  if (!strs.length) return "";
 
-        String prefix = strs[0];
-        int len = strs.length;
-        for (int i = 1; i < len; i++) {
-            // prefix 不是当前项的前缀时
-            while (strs[i].indexOf(prefix) != 0) {
-                prefix = prefix.substring(0, prefix.length() - 1);
-
-                if (prefix.isEmpty()) {
-                    return "";
-                }
-            }
-        }
-
-        return prefix;
+  let prefix = strs[0];
+  let len = strs.length;
+  for (let i = 1; i < len; i++) {
+    while (!strs[i].startsWith(prefix)) {
+      prefix = prefix.substring(0, prefix.length - 1);
     }
-}
+
+    if (!prefix.length) {
+      return "";
+    }
+  }
+
+  return prefix;
+};
 ```
 
 ### 解法二
 
 相对于解法一，使用垂直扫描进行优化。并取字符串数组中最短字符串的长度，以减少嵌套遍历次数。
 
-```java
-class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) {
-            return "";
-        };
+```js
+var longestCommonPrefix = function (strs) {
+  if (!strs.length) return "";
 
-        int minLen = Integer.MAX_VALUE;
-        for (String str : strs) {
-            minLen = Math.min(minLen, str.length());
-        }
+  let minLen = Infinity;
+  strs.forEach((str) => {
+    minLen = Math.min(minLen, str.length);
+  });
 
-        for (int i = 0; i < minLen; i++){
-            char c = strs[0].charAt(i);
-            for (int j = 1; j < strs.length; j ++) {
-                if (strs[j].charAt(i) != c) {
-                    return strs[0].substring(0, i);
-                }
-            }
-        }
-
-        return strs[0].substring(0, minLen);
+  let first = strs[0];
+  for (let i = 0; i < minLen; i++) {
+    let c = first[i];
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[j][i] !== c) {
+        return first.substring(0, i);
+      }
     }
-}
+  }
+
+  return first.substring(0, minLen);
+};
+```
+
+### 解法三
+
+首先利用 `sort` 的排序方法将数组按照编码排序，只需对数组首位和末位进行比较。
+
+```js
+var longestCommonPrefix = function (strs) {
+  if (!strs.length) return "";
+
+  strs.sort();
+
+  let first = strs[0];
+  let end = strs[strs.length - 1];
+  if (first === end || end.startsWith(first))) {
+    return first;
+  }
+
+  for (let i = 0; i < first.length; i++) {
+    if (first[i] !== end[i]) {
+      return first.substring(0, i);
+    }
+  }
+};
 ```
