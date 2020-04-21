@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]27. 移除元素"
+title: "[JavaScript LeetCode]27. 移除元素"
 entitle: leetcode-remove-element
 author: haohaio
 avatar: /images/favicon.png
@@ -59,7 +59,7 @@ for (int i = 0; i < len; i++) {
 }
 ```
 
-### 解法
+### 解法一
 
 和 26 题一样，并不是真的要删除元素。所以，可以使用 `newLen` 记录要返回数组的长度。遍历数组时，当前元素与目标值不相同时，依次从下标 0 开始，覆盖原始数组的值即可。
 
