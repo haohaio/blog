@@ -1,5 +1,5 @@
 ---
-title: "[Java LeetCode]27. Remove Element"
+title: "[Java LeetCode]27. 移除元素"
 entitle: leetcode-remove-element
 author: haohaio
 avatar: /images/favicon.png
@@ -18,69 +18,82 @@ photos:
   - /img/tags/leetcode.png
 ---
 
-[原题链接](https://leetcode.com/problems/remove-element/)
+[原题链接](https://leetcode-cn.com/problems/remove-element/)
 
-Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+给你一个数组 nums  和一个值 val，你需要 原地 移除所有数值等于  val  的元素，并返回移除后数组的新长度。
 
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
 
-The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
 
-Example 1:
+示例:
 
 ```code
-Given nums = [3,2,2,3], val = 3,
+给定 nums = [3,2,2,3], val = 3,
+函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
+你不需要考虑数组中超出新长度后面的元素。
 
-Your function should return length = 2, with the first two elements of nums being 2.
+给定 nums = [0,1,2,2,3,0,4,2], val = 2,
 
-It doesn't matter what you leave beyond the returned length.
+函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+注意这五个元素可为任意顺序。
+你不需要考虑数组中超出新长度后面的元素。
 ```
 
-Example 2:
+说明:
 
-```code
-Given nums = [0,1,2,2,3,0,4,2], val = 2,
+为什么返回数值是整数，但输出的答案是数组呢?
 
-Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
+请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 
-Note that the order of those five elements can be arbitrary.
+你可以想象内部操作如下:
 
-It doesn't matter what values are set beyond the returned length.
-```
-
-Clarification:
-
-Confused why the returned value is an integer but your answer is an array?
-
-Note that the input array is passed in by reference, which means modification to the input array will be known to the caller as well.
-
-Internally you can think of this:
-
-```code
-// nums is passed in by reference. (i.e., without making a copy)
+```js
+// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
 int len = removeElement(nums, val);
 
-// any modification to nums in your function would be known by the caller.
-// using the length returned by your function, it prints the first len elements.
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
 for (int i = 0; i < len; i++) {
-    print(nums[i]);
+    print(nums[i]);
 }
 ```
 
 ### 解法
 
-```java
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        int newLength = 0;
-        int len = nums.length;
-        for (int i = 0; i < len; i++) {
-            if (nums[i] != val) {
-                nums[newLength] = nums[i];
-                newLength++;
-            }
-        }
-        return newLength;
+和 26 题一样，并不是真的要删除元素。所以，可以使用 `newLen` 记录要返回数组的长度。遍历数组时，当前元素与目标值不相同时，依次从下标 0 开始，覆盖原始数组的值即可。
+
+```js
+var removeElement = function (nums, val) {
+  let newLen = 0;
+  let len = nums.length;
+  for (let i = 0; i < len; i++) {
+    if (nums[i] != val) {
+      nums[newLen++] = nums[i];
     }
-}
+  }
+
+  return newLen;
+};
+```
+
+### 解法二
+
+当遍历时，遇到等于目标值的元素时，从数组末位元素开始倒序替换当前下标元素，并将要返回的数组长度 - 1。这种解法，当重复值较少时，可以减少赋值操作。
+
+```js
+var removeElement = function (nums, val) {
+  let len = nums.length;
+  for (let i = 0; i < len; ) {
+    if (nums[i] === val) {
+      nums[i] = nums[len - 1];
+      len--;
+    } else {
+      // 只有当前下标元素和目标值不相等时，下标才移动
+      i++;
+    }
+  }
+
+  return len;
+};
 ```
