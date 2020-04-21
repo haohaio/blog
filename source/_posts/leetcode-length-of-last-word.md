@@ -37,7 +37,6 @@ photos:
 
 ```js
 var lengthOfLastWord = function (s) {
-  if (!s.length) return 0;
   s = s.trim();
   return s.length - 1 - s.lastIndexOf(" ");
 };
