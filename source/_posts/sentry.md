@@ -72,7 +72,7 @@ $ npm install @sentry/integrations
 $ yarn add @sentry/integrations
 ```
 
-- 在 app.js 中添加代码
+- 在 `/src/main.js` 中添加代码
 
 ```js
 import * as Sentry from '@sentry/browser';
@@ -165,7 +165,7 @@ token=token
 
 对文件中的参数进行一下说明：
 
-使用 Sentry 线上服务的话，url 设置为 `https://sentry.io/`
+使用 Sentry 在线服务的话，url 设置为 `https://sentry.io/`
 
 org 和 project 可按下图进行配置：
 
@@ -232,4 +232,82 @@ npm run build
 
 ### 私有化部署
 
-Todo
+如果企业内部使用的话，私有化部署还是很有必要的。接下来我们就使用 Docker 部署一个 Sentry 服务
+
+#### 1. 启动Redis容器
+
+```bash
+docker run -d --name sentry-redis redis
+```
+
+#### 2. 启动 Postgres 容器
+
+```bash
+docker run -d --name sentry-postgres -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=sentry postgres
+```
+
+#### 3. 生成所有 Sentry 容器共享的密钥
+
+```bash
+export SECRET_KEY=$(docker run --rm sentry config generate-secret-key|tail -n 1)
+```
+
+#### 4. 如果这是一个新数据库，则需要运行 upgrade
+
+```bash
+docker run -it --rm -e SENTRY_SECRET_KEY=${SECRET_KEY} --link sentry-postgres:postgres --link sentry-redis:redis sentry upgrade
+```
+
+输入邮箱、密码 创建用户。
+
+#### 5. 启动 Sentry 容器
+
+```bash
+docker run -d -p 9000:9000 --name my-sentry -e SENTRY_SECRET_KEY=${SECRET_KEY} --link sentry-redis:redis --link sentry-postgres:postgres sentry
+```
+
+#### 6. 启动调度器和 worker
+
+```bash
+docker run -d --name sentry-cron -e SENTRY_SECRET_KEY=${SECRET_KEY} --link sentry-postgres:postgres --link sentry-redis:redis sentry run cron
+
+docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY=${SECRET_KEY} --link sentry-postgres:postgres --link sentry-redis:redis sentry run worker
+```
+
+### 使用本地 Sentry 服务
+
+依次执行命令后，没有问题的话就可以访问 `http://localhost:9000` 来看一下我们部署的 Sentry 服务了。页面与 Sentry 的在线服务有些区别，但操作流程基本一样。
+
+![sentry_server](../img/assets/sentry_server.png)
+
+登陆成功后，新建一个项目，然后修改一下配置：
+
+#### 1. 在 `/src/main.js` 中修改 dsn
+
+```js
+import * as Sentry from '@sentry/browser';
+import { Vue as VueIntegration } from '@sentry/integrations';
+
+Sentry.init({
+  dsn: 'http://7b4af4c05ee84328a2497b4493bacc74@localhost:9000/3', // 创建项目后会生成 dsn
+  integrations: [new VueIntegration({Vue, attachProps: true})],
+});
+```
+
+#### 2. 重新生成 token 并修改 `.sentryclirc` 文件
+
+```code
+[defaults]
+url=http://localhost:9000
+org=sentry
+project=vue-exception-monitor
+
+[auth]
+token=037bf45801df4404b410dcc224768c907d5f09f1d9b8496e9228507371bd105d
+```
+
+然后重新部署 Vue 项目，测试一下：
+
+![sentry_server](../img/assets/sentry_server_2.png)
+
+可以看到我们本地部署的 Sentry 服务，也能帮我们收集异常了。完美 ~~
