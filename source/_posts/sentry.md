@@ -66,7 +66,7 @@ $ yarn add @sentry/browser
 
 ```bash
 # Using npm
-$ npm install @sentry/integrations
+$ npm install @sentry/integrations --save
 
 # Using yarn
 $ yarn add @sentry/integrations
