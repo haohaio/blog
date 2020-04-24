@@ -52,7 +52,7 @@ var merge = function (nums1, m, nums2, n) {
 
 设置指针 len1 和 len2 分别指向 nums1 和 nums2 的有数字尾部，从尾部值开始比较遍历，同时设置指针 len 指向 nums1 的最末尾，每次遍历比较值大小之后，则进行填充。
 
-当 len2 先小于 0 时，此时 num2 已全部填充进 nums1 中，则已经得到目标结果。 若 len1 先小于 0 时，表明此时 nums2 中 len2 之前的值都比 nums1 中的元素小，替换调 nums1 中，长度为 len2 + 1 的元素即可。
+当 len2 先小于 0 时，此时 num2 已全部填充进 nums1 中，则已经得到目标结果。 若 len1 先小于 0 时，表明此时 nums2 中 len2 之前的值都比 nums1 中的元素小，替换掉 nums1 中长度为 len2 + 1 的元素即可。
 
 ```js
 var merge = function (nums1, m, nums2, n) {
