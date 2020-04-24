@@ -6,7 +6,7 @@ avatar: /images/favicon.png
 authorLink: "https://haohaio.github.io"
 authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
-categories: 前端
+categories: 数据结构
 comments: true
 date: 2020-04-23 23:12:17
 timestamp:
@@ -17,6 +17,8 @@ description:
 photos:
   - /img/tags/leetcode.png
 ---
+
+[原题链接](https://leetcode-cn.com/problems/climbing-stairs/)
 
 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 
