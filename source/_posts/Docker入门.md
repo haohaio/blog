@@ -1,21 +1,21 @@
 ---
 title: Docker 入门
-entitle: 'docker-introduction'
+entitle: "docker-introduction"
 author: haohaio
 avatar: /images/favicon.png
-authorLink: 'https://haohaio.github.io'
-authorAbout: 'https://haohaio.github.io'
+authorLink: "https://haohaio.github.io"
+authorAbout: "https://haohaio.github.io"
 authorDesc: 写写代码，记记笔记
 categories: 其它
 timestamp: 1545227266
 comments: true
 date: 2018-12-19 21:47:46
 tags:
-- Docker
+  - Docker
 keywords:
 description: Docker 的一些基本概念及常用命令
 photos:
-- /img/tags/docker.png
+  - /img/tags/docker.png
 ---
 
 ## 简介
