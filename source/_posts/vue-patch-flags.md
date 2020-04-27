@@ -1,5 +1,5 @@
 ---
-title: "Vue 之 PatchFlags"
+title: "Vue 3.0 之 PatchFlags"
 entitle: vue-patch-flags
 author: haohaio
 avatar: /images/favicon.png
@@ -42,27 +42,25 @@ export function render(_ctx, _cache) {
 }
 ```
 
-可以看到，创建第二个虚拟 DOM `span` 时，最后一个参数为 `1 /* TEXT */`。这个 `1` 就是一个 `PatchFlag`，代表具有动态的 `textContent`。在更新的时候，通过枚举值判断，只会比较该节点文字的变化，无需再去比较其它属性的变化。
+可以看到，创建第二个虚拟 DOM `span` 时，最后一个参数为 `1 /* TEXT */`。这个 `1` 就是一个 `PatchFlag`，代表具有动态的 `textContent`。在新版本的 Vue 中，只会对带有 PatchFlag 的节点进行真正的追踪，并且在更新的时候，通过枚举值判断，只会比较该节点文字的变化，无需再去比较其它属性的变化。显而易见，这对性能提升有很大的帮助。
 
-> 在新版本的 Vue 中，只会对带有 PatchFlag 的节点进行真正的追踪。
-
-可以看下源码中对 `PatchFlag` 枚举值是如何定义的：[vue-next patchFlags](https://github.com/vuejs/vue-next/blob/c11905fe36adbcbb58c4fc02144e81ccdfaceda6/packages/shared/src/patchFlags.ts)
+可以看下源码中对 `PatchFlags` 枚举值是如何定义的：[vue-next patchFlags](https://github.com/vuejs/vue-next/blob/c11905fe36adbcbb58c4fc02144e81ccdfaceda6/packages/shared/src/patchFlags.ts)
 
 ```ts
 export const enum PatchFlags {
   TEXT = 1, // 表示具有动态textContent的元素
   CLASS = 1 << 1, // 表示有动态Class的元素
   STYLE = 1 << 2, // 表示有动态样式的元素
-  PROPS = 1 << 3, // 表示具有非类/样式动态道具的元素。(组件定义的 class 和 style 也属于 PROPS)
-  FULL_PROPS = 1 << 4, // 表示带有动态键的道具的元素，与上面 CLASS, STYLE and PROPS 相斥
+  PROPS = 1 << 3, // 表示具有非类/样式动态属性的元素。(组件定义的 class 和 style 也属于 PROPS)
+  FULL_PROPS = 1 << 4, // 表示带有动态属性的元素，与上面 CLASS, STYLE and PROPS 相斥
   HYDRATE_EVENTS = 1 << 5, // 表示带有事件监听器的元素
-  STABLE_FRAGMENT = 1 << 6, // 表示子元素顺序不变的 fragment。(在React中，有一个React.Fragments，其作用就是说在一个组件返回多个元素，意味着组件下根节点不只一个。新版本的 Vue 中 template 支持多个根节点了，不需要用一个根节点包裹所有的元素了，render 可以返回一个数组。新版本的 Vue 会把这些自动的变成 fragment，特别在模板语法中时无感知的)
+  STABLE_FRAGMENT = 1 << 6, // 表示子元素顺序不变的 fragment。(在React中，有一个 React.Fragments 的虚拟标签，其作用就是说在一个组件返回多个元素，意味着组件下根节点不只一个。新版本的 Vue 中 template 支持多个根节点了，不需要用一个根节点包裹所有的元素了，render 可以返回一个数组。新版本的 Vue 会把这些自动的变成 fragment，特别在模板语法中时无感知的)
   KEYED_FRAGMENT = 1 << 7, // 表示子元素有 key或部分子元素有 key 的 fragment
   UNKEYED_FRAGMENT = 1 << 8, // 表示带有无key绑定的 fragment
   NEED_PATCH = 1 << 9, // 表示只需要非属性比较的元素，例如 ref 或 directives
   DYNAMIC_SLOTS = 1 << 10, // 表示具有动态插槽的元素
 
-  // 特殊 FLAGS： 负整数表示永远不会用作diff,只需检查 patchFlag === FLAG.
+  // 特殊 FLAGS： 负整数表示永远不会用作 diff,只需检查 patchFlag === FLAG
 
   HOISTED = -1, // 表示静态节点
   BAIL = -2, // 与 renderSlot() 相关
@@ -112,6 +110,8 @@ export const enum PatchFlags {
   STYLE = 1 << 2, // 二进制: 0000 0100 (4)
   PROPS = 1 << 3, // 二进制:  0000 1000 (8)
   FULL_PROPS = 1 << 4 //  二进制: 0001 0000 (16)
+  ...
+}
 ```
 
 通过观察可以看到，每个枚举值的二进制数中都只有一个 1，通过左移的位数不同来进行区分。就是通过这个特点，我们可以方便的进行多枚举值情况的处理。
@@ -142,11 +142,36 @@ export function render(_ctx, _cache) {
 
 其实就是通过按位或运算得来的。`TEXT` 对应的二进制为 `0000 0001`，`PROPS` 对应的二进制为 `0000 1000`，执行按位或运算后结果就是 `0000 1001`，也就是 9 了。
 
+在源码 `vue-next/packages/compiler-core/src/transforms/transformElement.ts` 的 `buildProps` 方法中，有这样一段代码，我们来看一下：
+
+```js
+// patchFlag analysis
+if (hasDynamicKeys) {
+  patchFlag |= PatchFlags.FULL_PROPS
+} else {
+  if (hasClassBinding) {
+    patchFlag |= PatchFlags.CLASS
+  }
+  if (hasStyleBinding) {
+    patchFlag |= PatchFlags.STYLE
+  }
+  if (dynamicPropNames.length) {
+    patchFlag |= PatchFlags.PROPS
+  }
+  if (hasHydrationEventBinding) {
+    patchFlag |= PatchFlags.HYDRATE_EVENTS
+  }
+}
+if ((patchFlag === 0 || patchFlag === PatchFlags.HYDRATE_EVENTS) && (hasRef || runtimeDirectives.length > 0)) {
+  patchFlag |= PatchFlags.NEED_PATCH
+}
+```
+
+可以看到 Vue 中就是使用按位或运算 `|` 来合并多个枚举值的 ~~
+
 - 那我们如何通过 9 来判断包含了枚举值 `TEXT` 和 `PROPS` 呢？
 
-其实是通过按位与运算来判断的。`TEXT` 的值为 1，`9 & 1` 的值，二进制为 `0000 0001`，值为 1。`PROPS` 的值为 8，`9 & 8` 的值，二进制为 `0000 1000`，值为 8。值都不为 0，那么转换成布尔值的话就都是 `true`。
-
-现在再来看下 9 的二进制表示： `0000 1001`。可以看到有 2 个 `1`，第一个 1 与 `PROPS`(8) 二进制数 `0000 1000` 中的 1 位置相同，第二个 1 与 `TEXT`(1) 二进制数 `0000 0001` 中的 1 位置相同。如果第一次接触位运算的话，到这里是不是恍然大悟了呢。通过按位或运算和按位与运算，可以很方便的处理多枚举的情况哦 ~~
+其实是通过按位与运算来判断的。`TEXT` 的值为 1，`9 & 1` 的值，二进制为 `0000 0001`，值为 1。`PROPS` 的值为 8，`9 & 8` 的值，二进制为 `0000 1000`，值为 8。两个值都不为 0，那么转换成布尔值的话就都是 `true`。
 
 在源码 `vue-next/packages/runtime-core/src/componentRenderUtils.ts` 的 `shouldUpdateComponent` 方法中，有这样一段代码，我们来看一下：
 
@@ -172,7 +197,9 @@ if (patchFlag > 0) {
 }
 ```
 
-可以看到 Vue 中就是使用按位与运算（&）来判断枚举值的 ~~
+可以看到 Vue 中就是使用按位与运算 `&` 来判断枚举值的 ~~
+
+现在再来看下 9 的二进制表示： `0000 1001`。可以看到有 2 个 `1`，第一个 1 与 `PROPS`(8) 二进制数 `0000 1000` 中的 1 位置相同，第二个 1 与 `TEXT`(1) 二进制数 `0000 0001` 中的 1 位置相同。如果第一次接触位运算的话，看到这里是不是恍然大悟了呢。通过按位或运算和按位与运算，可以很方便的处理多枚举的情况哦 ~~
 
 ### 位运算编程小技巧
 
@@ -186,9 +213,14 @@ const isOdd = (num) => {
 }
 ```
 
-#### 乘以2 和 除以 2
+#### 乘以 2 和 除以 2
 
-看到上面枚举值可以看到左移一位就是乘以2，那么右移一位就是除以2了，但是这个除以 2 和 JavaScript 中的除以 2 还是有些不同的，比如 3 的二进制为 `0011`，那么右移一位为 `0001`，等于 1，相当于 JavaScript 中除以 2 后向下取整了。
+看到上面枚举值可以看到左移一位就是乘以 2，那么右移一位就是除以 2 了，但是这个除以 2 和 JavaScript 中的除以 2 还是有些不同的，比如 3 的二进制为 `0011`，那么右移一位为 `0001`，等于 1，相当于 JavaScript 中除以 2 后向下取整了。
+
+```js
+3 << 1 // 6
+3 >> 1 // 1
+```
 
 ### 小结
 
