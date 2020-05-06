@@ -102,7 +102,7 @@ var findSubstring = function (s, words) {
   let match = 0; // 若 windows[word] === needs[word]， 则  match + 1
   let ans = [];
 
-  // 只需遍历一个 word 的长度，就可取得切割成一个 word 长度的子字符串的所有情况
+  // 只需遍历一个 word 的长度，就可知道切割成一个 word 长度的子字符串的所有情况
   for (let i = 0; i < wordLen; i++) {
     windows = {};
     right = left = i;
@@ -126,11 +126,13 @@ var findSubstring = function (s, words) {
       if (windows[w1] === needs[w1]) match++;
 
       while (match === needsKeyLen) {
-        // 若滑动窗口长度等于目标 words 的所有长度， 则将左边界添加到结果中
+        // 若滑动窗口长度等于目标 words 的所有长度， 则将左边界添加到结果中，
+        // 例如 s："barbarfoothefoobarman"，words：["foo","bar"]，第一次进入 while 循环时，needs = {foo: 1, bar: 1}; windows {bar: 2, foo: 1}
         if (right - left === allWordsLen) {
           ans.push(left);
         }
 
+        // 此时 windows 内的存储的 word 值多余 needs, 故需要滑动窗口左边界向右移动
         let w2 = s.slice(left, left + wordLen);
         left += wordLen;
         if (needs[w2]) {
