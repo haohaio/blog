@@ -183,34 +183,8 @@ console.log(cat1.color); // ["black", "white"]
 
 - 缺点
 
-- 实例是父类的实例，不是子类的实例
-- 不支持多继承
-
-### 寄生组合继承
-
-```js
-function Animal(species) {
-  this.species = species;
-  this.color = ["black", "white"];
-}
-
-Animal.prototype.sayHello = function () {
-  console.log(`Hello, my species is ${this.species}.`);
-};
-
-function Cat(name) {
-  Animal.call(this, "Cat");
-  this.name = name;
-}
-Cat.prototype = Object.create(Animal.prototype);
-// 修复构造函数指向（修改子类 prototype 时，会修改 constructor 的指向）
-Cat.prototype.constructor = Cat;
-
-let cat1 = new Cat("Tom");
-cat1.sayHello(); // Hello, my species is Cat.
-```
-
-解决了组合继承会两次调用父类的构造函数造成浪费的缺点。是一种比较完美的继承方式。
+1. 实例是父类的实例，不是子类的实例
+2. 不支持多继承
 
 ### 拷贝继承
 
@@ -252,6 +226,32 @@ console.log(cat1.color); // ["black", "white", "blue"]
 
 1. 效率低，性能差，占用内存高（因为需要拷贝父类属性）
 2. 使用的是浅拷贝的方式，父类的引用属性依然会被子类共享
+
+### 寄生组合继承
+
+```js
+function Animal(species) {
+  this.species = species;
+  this.color = ["black", "white"];
+}
+
+Animal.prototype.sayHello = function () {
+  console.log(`Hello, my species is ${this.species}.`);
+};
+
+function Cat(name) {
+  Animal.call(this, "Cat");
+  this.name = name;
+}
+Cat.prototype = Object.create(Animal.prototype);
+// 修复构造函数指向（修改子类 prototype 时，会修改 constructor 的指向）
+Cat.prototype.constructor = Cat;
+
+let cat1 = new Cat("Tom");
+cat1.sayHello(); // Hello, my species is Cat.
+```
+
+解决了组合继承会两次调用父类的构造函数造成浪费的缺点。是一种比较完美的继承方式。
 
 ### ES6 Class extends
 
