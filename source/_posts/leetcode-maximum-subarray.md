@@ -32,28 +32,92 @@ photos:
 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
 ```
 
-### 解法
+### 解法一
+
+暴力求解，直接列出所有情况的子数组和进行比较。
+
+```js
+var maxSubArray = function (nums) {
+  let len = nums.length;
+  let maxSum = -Infinity;
+  for (let i = 0; i < len; i++) {
+    for (let j = i; j < len; j++) {
+      let thisSum = 0;
+      for (let k = i; k <= j; k++) {
+        thisSum += nums[k];
+      }
+
+      maxSum = Math.max(thisSum, maxSum);
+    }
+  }
+
+  return maxSum;
+};
+```
+
+三层 for 循环，很明显时间复杂度为 O(n<sup>3</sup>)。这种解法在 leetcode 判断会超出时间限制。
+
+### 解法二
+
+对解法一进行优化。在第三层 for 循环计算子数组和时，对于相同的 i, 不同的 j，只要在 j - 1 次循环的基础上累加一项即可。因此，可以将三层 for 循环去掉。时间复杂度为 O(n<sup>2</sup>)
+
+```js
+var maxSubArray = function (nums) {
+  let len = nums.length;
+  let maxSum = nums[0];
+  for (let i = 1; i < len; i++) {
+    let thisSum = maxSum;
+    for (let j = i; j < len; j++) {
+      thisSum += nums[j];
+
+      maxSum = Math.max(thisSum, maxSum);
+    }
+  }
+
+  return maxSum;
+};
+```
+
+### 解法三
 
 这道题可以用动态规划的思路来解决：
 
-- 首先对数组进行遍历，当前最大连续子序列和为 sum，结果为 ans
-- 如果 sum > 0，则说明 sum 对结果有增益效果(sum + num > num)，则 sum 保留并加上当前遍历数字
-- 如果 sum <= 0，则说明 sum 对结果无增益效果(sum + num <= num)，需要舍弃，则 sum 直接更新为当前遍历数字
-- 每次比较 sum 和 ans 的大小，将最大值置为 ans，遍历结束返回结果
+- 首先对数组进行遍历，当前最大连续子序列和为 thisSum，结果为 maxSum
+- 如果 thisSum > 0，则说明 thisSum 对结果有增益效果(thisSum + num > num)，则 thisSum 保留并加上当前遍历数字
+- 如果 thisSum <= 0，则说明 thisSum 对结果无增益效果(thisSum + num <= num)，需要舍弃，则 thisSum 直接更新为当前遍历数字
+- 每次比较 thisSum 和 maxSum 的大小，将最大值置为 maxSum，遍历结束返回结果
 - 时间复杂度：O(n)
 
 ```js
 var maxSubArray = function (nums) {
-  let ans = nums[0];
-  let sum = 0;
+  let maxSum = nums[0];
+  let thisSum = 0;
   for (const num of nums) {
-    if (sum > 0) {
-      sum += num;
+    if (thisSum > 0) {
+      thisSum += num;
     } else {
-      sum = num;
+      thisSum = num;
     }
-    ans = Math.max(ans, sum);
+    maxSum = Math.max(sum, maxSum);
   }
-  return ans;
+  return maxSum;
 };
+```
+
+### 解法四
+
+看下官方题解，用 Math.max() 方法简化了判断 sum 是否大于 0 的过程，看起来更简洁一些：
+
+```js
+var maxSubArray = function (nums) {
+  let len = nums.length;
+  let maxSum = nums[0];
+  let pre = 0;
+  nums.forEach(num => {
+    pre = Math.max(pre + num, num);
+    maxSum = Math.max(pre, maxSum)
+  })
+  
+  return maxSum;
+}
 ```
