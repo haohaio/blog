@@ -95,9 +95,6 @@ deploy:
     repo: git@github.com:haohaio/haohaio.git
     branch: master
   - type: git
-    repo: git@git.dev.tencent.com:nook/nook.coding.me.git
-    branch: coding-pages
-  - type: git
     repo: git@gitee.com:haohaio/haohaio.git
     branch: master
 

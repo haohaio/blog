@@ -64,9 +64,9 @@ var maxSubArray = function (nums) {
 ```js
 var maxSubArray = function (nums) {
   let len = nums.length;
-  let maxSum = nums[0];
+  let maxSum = -Infinity;
   for (let i = 1; i < len; i++) {
-    let thisSum = maxSum;
+    let thisSum = 0;
     for (let j = i; j < len; j++) {
       thisSum += nums[j];
 
