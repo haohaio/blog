@@ -11,7 +11,7 @@ timestamp: 1545469530
 comments: true
 date: 2018-12-22 17:05:30
 tags:
-- CSS
+- Canvas
 keywords:
 description: 通过路径来描边和填充
 photos:

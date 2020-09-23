@@ -11,7 +11,7 @@ timestamp: 1546394525
 comments: true
 date: 2019-01-02 10:02:05
 tags:
-- CSS
+- Canvas
 keywords:
 description: 使用 Canvas 绘制一个仪表盘
 photos:

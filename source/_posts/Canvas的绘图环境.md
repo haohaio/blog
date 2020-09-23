@@ -11,7 +11,7 @@ timestamp: 1545031997
 comments: true
 date: 2018-12-17 15:33:17
 tags:
-- CSS
+- Canvas
 keywords:
 description: Canvas的绘图环境
 photos:
