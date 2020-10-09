@@ -157,6 +157,11 @@ canvas.onmousemove = function (e) {
   } else {
     canvas.style.cursor = "auto";
   }
+
+  // 当可拖动时，更新六个点的坐标
+  if (isInGraphics && canMove) {
+    updatePoints(point);
+  }
 };
 
 // 接下来给 canvas 添加 onmousedown 事件，获得拖动的开始点
